@@ -8,7 +8,7 @@ This version corrects automated explanations of the existing default workflow. N
 Open `Run_site_assessment.ipynb`, run setup cells, enter connection settings and one site alias, select its schema, confirm single-site scope and click the screening button. Supply the password at the prompt; never save it in the notebook. The site alias labels outputs; it does not filter a shared schema. See `NOTEBOOK_GUIDE.md`.
 
 ## Actual default scope: 18 SQL queries, seven themes
-- Microbiology: standardized-concept candidate use, culture counts/positivity and existence flags. Does not validate specimen Р Р†РІР‚В РІР‚в„ў organism Р Р†РІР‚В РІР‚в„ў AST (antimicrobial susceptibility testing) links.
+- Microbiology: standardized-concept candidate use, culture counts/positivity and existence flags. Does not validate specimen - organism - AST (antimicrobial susceptibility testing) links.
 - Infusions: norepinephrine and propofol candidates, timestamps, intervals and rate-like representations. Does not reconstruct validated administered dose trajectories.
 - Ventilation: candidate procedure/observation/device records, time and visit fields. Does not establish ventilation episodes or duration.
 - Code status: candidate records and broad categories; DNR/DNI limitations remain combined in the historical query. Multiple categories per visit do not demonstrate temporal changes.
