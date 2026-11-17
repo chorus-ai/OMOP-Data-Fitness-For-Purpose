@@ -325,5 +325,5 @@ if __name__ == "__main__":
         "WHERE actual_kind IS DISTINCT FROM expected_kind ORDER BY concept_name;\n"
     )
     (fixtures / "dialysis_classifier_regression.sql").write_text(fixture_sql,encoding="utf-8")
-    (ROOT/"manifest.json").write_text(json.dumps(MANIFEST,indent=2)+"\n",encoding="utf-8")
+    (ROOT/"config"/"manifest.json").write_text(json.dumps(MANIFEST,indent=2)+"\n",encoding="utf-8")
     print(f"Wrote {len(MANIFEST)} read-only aggregate templates")

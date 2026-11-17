@@ -1,0 +1,10 @@
+# Install before running; cells never install packages.
+-r ../requirements.txt
+-r pdf.txt
+nbformat>=5.10,<6
+nbclient>=0.10,<1
+jupyterlab>=4.2,<5
+ipykernel>=6.29,<8
+ipywidgets>=8.1,<9
+# Optional display dependency; builtin csv/escaped HTML fallback exists.
+pandas>=2.2,<3

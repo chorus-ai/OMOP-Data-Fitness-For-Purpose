@@ -1,0 +1,2 @@
+# Preserve SQL working-tree bytes across Git checkout settings.
+*.sql text eol=crlf
