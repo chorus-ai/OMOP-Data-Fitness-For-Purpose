@@ -1,0 +1,102 @@
+[
+  {
+    "concept_name": "Hemodialysis procedure with single evaluation by a physician or other qualified health care professional",
+    "expected_kind": "other_rrt_candidate"
+  },
+  {
+    "concept_name": "Hemodialysis procedure requiring repeated evaluations by a physician or other qualified health care professional",
+    "expected_kind": "other_rrt_candidate"
+  },
+  {
+    "concept_name": "Hemodialysis procedure performed by a qualified HEALTH CARE PROFESSIONAL",
+    "expected_kind": "other_rrt_candidate"
+  },
+  {
+    "concept_name": "Continuous renal replacement therapy performed by a qualified health-care professional",
+    "expected_kind": "continuous_rrt_candidate"
+  },
+  {
+    "concept_name": "Peritoneal dialysis performed by qualified healthcare professionals",
+    "expected_kind": "peritoneal_dialysis_candidate"
+  },
+  {
+    "concept_name": "Hemodialysis procedure performed by a health care provider",
+    "expected_kind": "other_rrt_candidate"
+  },
+  {
+    "concept_name": "Hemodialysis procedure performed by a health care practitioner",
+    "expected_kind": "other_rrt_candidate"
+  },
+  {
+    "concept_name": "Hemodialysis care",
+    "expected_kind": "documentation_or_monitoring_candidate"
+  },
+  {
+    "concept_name": "Dialysis care provided by a qualified health care professional",
+    "expected_kind": "documentation_or_monitoring_candidate"
+  },
+  {
+    "concept_name": "Dialysis care provided by a qualified health-care professional",
+    "expected_kind": "documentation_or_monitoring_candidate"
+  },
+  {
+    "concept_name": "Hemodialysis aftercare",
+    "expected_kind": "documentation_or_monitoring_candidate"
+  },
+  {
+    "concept_name": "Hemodialysis comments",
+    "expected_kind": "documentation_or_monitoring_candidate"
+  },
+  {
+    "concept_name": "Hemodialysis pre-treatment assessment",
+    "expected_kind": "documentation_or_monitoring_candidate"
+  },
+  {
+    "concept_name": "Hemodialysis reassessment",
+    "expected_kind": "documentation_or_monitoring_candidate"
+  },
+  {
+    "concept_name": "Monitoring of continuous renal replacement therapy",
+    "expected_kind": "documentation_or_monitoring_candidate"
+  },
+  {
+    "concept_name": "History of hemodialysis recorded by a qualified health care professional",
+    "expected_kind": "documentation_or_monitoring_candidate"
+  },
+  {
+    "concept_name": "Hemodialysis status",
+    "expected_kind": "documentation_or_monitoring_candidate"
+  },
+  {
+    "concept_name": "Hemodialysis clearance",
+    "expected_kind": "documentation_or_monitoring_candidate"
+  },
+  {
+    "concept_name": "Hemodialysis blood flow",
+    "expected_kind": "documentation_or_monitoring_candidate"
+  },
+  {
+    "concept_name": "Hemodialysis pressure",
+    "expected_kind": "documentation_or_monitoring_candidate"
+  },
+  {
+    "concept_name": "Hemodialysis catheter care",
+    "expected_kind": "access_candidate"
+  },
+  {
+    "concept_name": "Preoperative hemodialysis vessel assessment",
+    "expected_kind": "access_candidate"
+  },
+  {
+    "concept_name": "Dialysis arteriovenous fistula",
+    "expected_kind": "access_candidate"
+  },
+  {
+    "concept_name": "Target ultrafiltration fluid removal",
+    "expected_kind": "target_removal_candidate"
+  },
+  {
+    "concept_name": "Hemodialysis fluid removed",
+    "expected_kind": "actual_removal_candidate"
+  }
+]

@@ -1,0 +1,568 @@
+[
+  {
+    "id": "transfusion_concept_discovery",
+    "topic": "transfusion",
+    "path": "sql/transfusion_concept_discovery.sql",
+    "required_tables": [
+      "concept"
+    ],
+    "description": "Inspect vocabulary candidate availability and inherited seed coverage before interpreting clinical counts."
+  },
+  {
+    "id": "transfusion_procedure_occurrence",
+    "topic": "transfusion",
+    "path": "sql/transfusion_procedure_occurrence.sql",
+    "required_tables": [
+      "concept",
+      "procedure_occurrence"
+    ],
+    "description": "Candidate-row coverage, provenance, datetime, quantity/units where relevant, and linkage-field completeness. Match counts overlap and must not be summed."
+  },
+  {
+    "id": "transfusion_procedure_occurrence_semantic_inventory",
+    "topic": "transfusion",
+    "path": "sql/transfusion_procedure_occurrence_semantic_inventory.sql",
+    "required_tables": [
+      "concept",
+      "procedure_occurrence"
+    ],
+    "description": "Counts by candidate semantic class and standard/source/value provenance. Classes are provisional and overlapping across provenance."
+  },
+  {
+    "id": "transfusion_drug_exposure",
+    "topic": "transfusion",
+    "path": "sql/transfusion_drug_exposure.sql",
+    "required_tables": [
+      "concept",
+      "drug_exposure"
+    ],
+    "description": "Candidate-row coverage, provenance, datetime, quantity/units where relevant, and linkage-field completeness. Match counts overlap and must not be summed."
+  },
+  {
+    "id": "transfusion_drug_exposure_semantic_inventory",
+    "topic": "transfusion",
+    "path": "sql/transfusion_drug_exposure_semantic_inventory.sql",
+    "required_tables": [
+      "concept",
+      "drug_exposure"
+    ],
+    "description": "Counts by candidate semantic class and standard/source/value provenance. Classes are provisional and overlapping across provenance."
+  },
+  {
+    "id": "transfusion_device_exposure",
+    "topic": "transfusion",
+    "path": "sql/transfusion_device_exposure.sql",
+    "required_tables": [
+      "concept",
+      "device_exposure"
+    ],
+    "description": "Candidate-row coverage, provenance, datetime, quantity/units where relevant, and linkage-field completeness. Match counts overlap and must not be summed."
+  },
+  {
+    "id": "transfusion_device_exposure_semantic_inventory",
+    "topic": "transfusion",
+    "path": "sql/transfusion_device_exposure_semantic_inventory.sql",
+    "required_tables": [
+      "concept",
+      "device_exposure"
+    ],
+    "description": "Counts by candidate semantic class and standard/source/value provenance. Classes are provisional and overlapping across provenance."
+  },
+  {
+    "id": "transfusion_measurement",
+    "topic": "transfusion",
+    "path": "sql/transfusion_measurement.sql",
+    "required_tables": [
+      "concept",
+      "measurement"
+    ],
+    "description": "Candidate-row coverage, provenance, datetime, quantity/units where relevant, and linkage-field completeness. Match counts overlap and must not be summed."
+  },
+  {
+    "id": "transfusion_measurement_semantic_inventory",
+    "topic": "transfusion",
+    "path": "sql/transfusion_measurement_semantic_inventory.sql",
+    "required_tables": [
+      "concept",
+      "measurement"
+    ],
+    "description": "Counts by candidate semantic class and standard/source/value provenance. Classes are provisional and overlapping across provenance."
+  },
+  {
+    "id": "transfusion_observation",
+    "topic": "transfusion",
+    "path": "sql/transfusion_observation.sql",
+    "required_tables": [
+      "concept",
+      "observation"
+    ],
+    "description": "Candidate-row coverage, provenance, datetime, quantity/units where relevant, and linkage-field completeness. Match counts overlap and must not be summed."
+  },
+  {
+    "id": "transfusion_observation_semantic_inventory",
+    "topic": "transfusion",
+    "path": "sql/transfusion_observation_semantic_inventory.sql",
+    "required_tables": [
+      "concept",
+      "observation"
+    ],
+    "description": "Counts by candidate semantic class and standard/source/value provenance. Classes are provisional and overlapping across provenance."
+  },
+  {
+    "id": "transfusion_procedure_occurrence_visit_validation",
+    "topic": "transfusion",
+    "path": "sql/transfusion_procedure_occurrence_visit_validation.sql",
+    "required_tables": [
+      "concept",
+      "procedure_occurrence",
+      "visit_occurrence"
+    ],
+    "description": "Resolve visit IDs, person identity and event/start timestamp against linked hospitalization boundaries."
+  },
+  {
+    "id": "microbiology_ast_concept_discovery",
+    "topic": "microbiology_ast",
+    "path": "sql/microbiology_ast_concept_discovery.sql",
+    "required_tables": [
+      "concept"
+    ],
+    "description": "Inspect vocabulary candidate availability and inherited seed coverage before interpreting clinical counts."
+  },
+  {
+    "id": "microbiology_ast_measurement",
+    "topic": "microbiology_ast",
+    "path": "sql/microbiology_ast_measurement.sql",
+    "required_tables": [
+      "concept",
+      "measurement"
+    ],
+    "description": "Candidate-row coverage, provenance, datetime, quantity/units where relevant, and linkage-field completeness. Match counts overlap and must not be summed."
+  },
+  {
+    "id": "microbiology_ast_measurement_visit_validation",
+    "topic": "microbiology_ast",
+    "path": "sql/microbiology_ast_measurement_visit_validation.sql",
+    "required_tables": [
+      "concept",
+      "measurement",
+      "visit_occurrence"
+    ],
+    "description": "Resolve visit IDs, person identity and event/start timestamp against linked hospitalization boundaries."
+  },
+  {
+    "id": "continuous_infusions_concept_discovery",
+    "topic": "continuous_infusions",
+    "path": "sql/continuous_infusions_concept_discovery.sql",
+    "required_tables": [
+      "concept"
+    ],
+    "description": "Inspect vocabulary candidate availability and inherited seed coverage before interpreting clinical counts."
+  },
+  {
+    "id": "continuous_infusions_measurement",
+    "topic": "continuous_infusions",
+    "path": "sql/continuous_infusions_measurement.sql",
+    "required_tables": [
+      "concept",
+      "measurement"
+    ],
+    "description": "Candidate-row coverage, provenance, datetime, quantity/units where relevant, and linkage-field completeness. Match counts overlap and must not be summed."
+  },
+  {
+    "id": "continuous_infusions_observation",
+    "topic": "continuous_infusions",
+    "path": "sql/continuous_infusions_observation.sql",
+    "required_tables": [
+      "concept",
+      "observation"
+    ],
+    "description": "Candidate-row coverage, provenance, datetime, quantity/units where relevant, and linkage-field completeness. Match counts overlap and must not be summed."
+  },
+  {
+    "id": "continuous_infusions_measurement_visit_validation",
+    "topic": "continuous_infusions",
+    "path": "sql/continuous_infusions_measurement_visit_validation.sql",
+    "required_tables": [
+      "concept",
+      "measurement",
+      "visit_occurrence"
+    ],
+    "description": "Resolve visit IDs, person identity and event/start timestamp against linked hospitalization boundaries."
+  },
+  {
+    "id": "mechanical_ventilation_concept_discovery",
+    "topic": "mechanical_ventilation",
+    "path": "sql/mechanical_ventilation_concept_discovery.sql",
+    "required_tables": [
+      "concept"
+    ],
+    "description": "Inspect vocabulary candidate availability and inherited seed coverage before interpreting clinical counts."
+  },
+  {
+    "id": "mechanical_ventilation_procedure_occurrence",
+    "topic": "mechanical_ventilation",
+    "path": "sql/mechanical_ventilation_procedure_occurrence.sql",
+    "required_tables": [
+      "concept",
+      "procedure_occurrence"
+    ],
+    "description": "Candidate-row coverage, provenance, datetime, quantity/units where relevant, and linkage-field completeness. Match counts overlap and must not be summed."
+  },
+  {
+    "id": "mechanical_ventilation_procedure_occurrence_semantic_inventory",
+    "topic": "mechanical_ventilation",
+    "path": "sql/mechanical_ventilation_procedure_occurrence_semantic_inventory.sql",
+    "required_tables": [
+      "concept",
+      "procedure_occurrence"
+    ],
+    "description": "Counts by candidate semantic class and standard/source/value provenance. Classes are provisional and overlapping across provenance."
+  },
+  {
+    "id": "mechanical_ventilation_device_exposure",
+    "topic": "mechanical_ventilation",
+    "path": "sql/mechanical_ventilation_device_exposure.sql",
+    "required_tables": [
+      "concept",
+      "device_exposure"
+    ],
+    "description": "Candidate-row coverage, provenance, datetime, quantity/units where relevant, and linkage-field completeness. Match counts overlap and must not be summed."
+  },
+  {
+    "id": "mechanical_ventilation_device_exposure_semantic_inventory",
+    "topic": "mechanical_ventilation",
+    "path": "sql/mechanical_ventilation_device_exposure_semantic_inventory.sql",
+    "required_tables": [
+      "concept",
+      "device_exposure"
+    ],
+    "description": "Counts by candidate semantic class and standard/source/value provenance. Classes are provisional and overlapping across provenance."
+  },
+  {
+    "id": "mechanical_ventilation_measurement",
+    "topic": "mechanical_ventilation",
+    "path": "sql/mechanical_ventilation_measurement.sql",
+    "required_tables": [
+      "concept",
+      "measurement"
+    ],
+    "description": "Candidate-row coverage, provenance, datetime, quantity/units where relevant, and linkage-field completeness. Match counts overlap and must not be summed."
+  },
+  {
+    "id": "mechanical_ventilation_measurement_semantic_inventory",
+    "topic": "mechanical_ventilation",
+    "path": "sql/mechanical_ventilation_measurement_semantic_inventory.sql",
+    "required_tables": [
+      "concept",
+      "measurement"
+    ],
+    "description": "Counts by candidate semantic class and standard/source/value provenance. Classes are provisional and overlapping across provenance."
+  },
+  {
+    "id": "mechanical_ventilation_observation",
+    "topic": "mechanical_ventilation",
+    "path": "sql/mechanical_ventilation_observation.sql",
+    "required_tables": [
+      "concept",
+      "observation"
+    ],
+    "description": "Candidate-row coverage, provenance, datetime, quantity/units where relevant, and linkage-field completeness. Match counts overlap and must not be summed."
+  },
+  {
+    "id": "mechanical_ventilation_observation_semantic_inventory",
+    "topic": "mechanical_ventilation",
+    "path": "sql/mechanical_ventilation_observation_semantic_inventory.sql",
+    "required_tables": [
+      "concept",
+      "observation"
+    ],
+    "description": "Counts by candidate semantic class and standard/source/value provenance. Classes are provisional and overlapping across provenance."
+  },
+  {
+    "id": "mechanical_ventilation_procedure_occurrence_visit_validation",
+    "topic": "mechanical_ventilation",
+    "path": "sql/mechanical_ventilation_procedure_occurrence_visit_validation.sql",
+    "required_tables": [
+      "concept",
+      "procedure_occurrence",
+      "visit_occurrence"
+    ],
+    "description": "Resolve visit IDs, person identity and event/start timestamp against linked hospitalization boundaries."
+  },
+  {
+    "id": "code_status_concept_discovery",
+    "topic": "code_status",
+    "path": "sql/code_status_concept_discovery.sql",
+    "required_tables": [
+      "concept"
+    ],
+    "description": "Inspect vocabulary candidate availability and inherited seed coverage before interpreting clinical counts."
+  },
+  {
+    "id": "code_status_observation",
+    "topic": "code_status",
+    "path": "sql/code_status_observation.sql",
+    "required_tables": [
+      "concept",
+      "observation"
+    ],
+    "description": "Candidate-row coverage, provenance, datetime, quantity/units where relevant, and linkage-field completeness. Match counts overlap and must not be summed."
+  },
+  {
+    "id": "code_status_observation_semantic_inventory",
+    "topic": "code_status",
+    "path": "sql/code_status_observation_semantic_inventory.sql",
+    "required_tables": [
+      "concept",
+      "observation"
+    ],
+    "description": "Counts by candidate semantic class and standard/source/value provenance. Classes are provisional and overlapping across provenance."
+  },
+  {
+    "id": "code_status_condition_occurrence",
+    "topic": "code_status",
+    "path": "sql/code_status_condition_occurrence.sql",
+    "required_tables": [
+      "concept",
+      "condition_occurrence"
+    ],
+    "description": "Candidate-row coverage, provenance, datetime, quantity/units where relevant, and linkage-field completeness. Match counts overlap and must not be summed."
+  },
+  {
+    "id": "code_status_condition_occurrence_semantic_inventory",
+    "topic": "code_status",
+    "path": "sql/code_status_condition_occurrence_semantic_inventory.sql",
+    "required_tables": [
+      "concept",
+      "condition_occurrence"
+    ],
+    "description": "Counts by candidate semantic class and standard/source/value provenance. Classes are provisional and overlapping across provenance."
+  },
+  {
+    "id": "code_status_observation_visit_validation",
+    "topic": "code_status",
+    "path": "sql/code_status_observation_visit_validation.sql",
+    "required_tables": [
+      "concept",
+      "observation",
+      "visit_occurrence"
+    ],
+    "description": "Resolve visit IDs, person identity and event/start timestamp against linked hospitalization boundaries."
+  },
+  {
+    "id": "fluid_balance_concept_discovery",
+    "topic": "fluid_balance",
+    "path": "sql/fluid_balance_concept_discovery.sql",
+    "required_tables": [
+      "concept"
+    ],
+    "description": "Inspect vocabulary candidate availability and inherited seed coverage before interpreting clinical counts."
+  },
+  {
+    "id": "fluid_balance_measurement",
+    "topic": "fluid_balance",
+    "path": "sql/fluid_balance_measurement.sql",
+    "required_tables": [
+      "concept",
+      "measurement"
+    ],
+    "description": "Candidate-row coverage, provenance, datetime, quantity/units where relevant, and linkage-field completeness. Match counts overlap and must not be summed."
+  },
+  {
+    "id": "fluid_balance_observation",
+    "topic": "fluid_balance",
+    "path": "sql/fluid_balance_observation.sql",
+    "required_tables": [
+      "concept",
+      "observation"
+    ],
+    "description": "Candidate-row coverage, provenance, datetime, quantity/units where relevant, and linkage-field completeness. Match counts overlap and must not be summed."
+  },
+  {
+    "id": "fluid_balance_measurement_visit_validation",
+    "topic": "fluid_balance",
+    "path": "sql/fluid_balance_measurement_visit_validation.sql",
+    "required_tables": [
+      "concept",
+      "measurement",
+      "visit_occurrence"
+    ],
+    "description": "Resolve visit IDs, person identity and event/start timestamp against linked hospitalization boundaries."
+  },
+  {
+    "id": "dialysis_rrt_concept_discovery",
+    "topic": "dialysis_rrt",
+    "path": "sql/dialysis_rrt_concept_discovery.sql",
+    "required_tables": [
+      "concept"
+    ],
+    "description": "Inspect vocabulary candidate availability and inherited seed coverage before interpreting clinical counts."
+  },
+  {
+    "id": "dialysis_rrt_procedure_occurrence",
+    "topic": "dialysis_rrt",
+    "path": "sql/dialysis_rrt_procedure_occurrence.sql",
+    "required_tables": [
+      "concept",
+      "procedure_occurrence"
+    ],
+    "description": "Candidate-row coverage, provenance, datetime, quantity/units where relevant, and linkage-field completeness. Match counts overlap and must not be summed."
+  },
+  {
+    "id": "dialysis_rrt_procedure_occurrence_semantic_inventory",
+    "topic": "dialysis_rrt",
+    "path": "sql/dialysis_rrt_procedure_occurrence_semantic_inventory.sql",
+    "required_tables": [
+      "concept",
+      "procedure_occurrence"
+    ],
+    "description": "Counts by candidate semantic class and standard/source/value provenance. Classes are provisional and overlapping across provenance."
+  },
+  {
+    "id": "dialysis_rrt_device_exposure",
+    "topic": "dialysis_rrt",
+    "path": "sql/dialysis_rrt_device_exposure.sql",
+    "required_tables": [
+      "concept",
+      "device_exposure"
+    ],
+    "description": "Candidate-row coverage, provenance, datetime, quantity/units where relevant, and linkage-field completeness. Match counts overlap and must not be summed."
+  },
+  {
+    "id": "dialysis_rrt_device_exposure_semantic_inventory",
+    "topic": "dialysis_rrt",
+    "path": "sql/dialysis_rrt_device_exposure_semantic_inventory.sql",
+    "required_tables": [
+      "concept",
+      "device_exposure"
+    ],
+    "description": "Counts by candidate semantic class and standard/source/value provenance. Classes are provisional and overlapping across provenance."
+  },
+  {
+    "id": "dialysis_rrt_measurement",
+    "topic": "dialysis_rrt",
+    "path": "sql/dialysis_rrt_measurement.sql",
+    "required_tables": [
+      "concept",
+      "measurement"
+    ],
+    "description": "Candidate-row coverage, provenance, datetime, quantity/units where relevant, and linkage-field completeness. Match counts overlap and must not be summed."
+  },
+  {
+    "id": "dialysis_rrt_measurement_semantic_inventory",
+    "topic": "dialysis_rrt",
+    "path": "sql/dialysis_rrt_measurement_semantic_inventory.sql",
+    "required_tables": [
+      "concept",
+      "measurement"
+    ],
+    "description": "Counts by candidate semantic class and standard/source/value provenance. Classes are provisional and overlapping across provenance."
+  },
+  {
+    "id": "dialysis_rrt_observation",
+    "topic": "dialysis_rrt",
+    "path": "sql/dialysis_rrt_observation.sql",
+    "required_tables": [
+      "concept",
+      "observation"
+    ],
+    "description": "Candidate-row coverage, provenance, datetime, quantity/units where relevant, and linkage-field completeness. Match counts overlap and must not be summed."
+  },
+  {
+    "id": "dialysis_rrt_observation_semantic_inventory",
+    "topic": "dialysis_rrt",
+    "path": "sql/dialysis_rrt_observation_semantic_inventory.sql",
+    "required_tables": [
+      "concept",
+      "observation"
+    ],
+    "description": "Counts by candidate semantic class and standard/source/value provenance. Classes are provisional and overlapping across provenance."
+  },
+  {
+    "id": "dialysis_rrt_procedure_occurrence_visit_validation",
+    "topic": "dialysis_rrt",
+    "path": "sql/dialysis_rrt_procedure_occurrence_visit_validation.sql",
+    "required_tables": [
+      "concept",
+      "procedure_occurrence",
+      "visit_occurrence"
+    ],
+    "description": "Resolve visit IDs, person identity and event/start timestamp against linked hospitalization boundaries."
+  },
+  {
+    "id": "continuous_infusions_drug_exposure",
+    "topic": "continuous_infusions",
+    "path": "sql/continuous_infusions_drug_exposure.sql",
+    "required_tables": [
+      "concept",
+      "concept_ancestor",
+      "drug_exposure"
+    ],
+    "description": "Ingredient descendants plus lexical/source candidates; drug-specific interval, dose-unit, quantity, route and provenance checks. Never assumes quantity is actual infusion rate."
+  },
+  {
+    "id": "continuous_infusions_drug_exposure_visit_validation",
+    "topic": "continuous_infusions",
+    "path": "sql/continuous_infusions_drug_exposure_visit_validation.sql",
+    "required_tables": [
+      "concept",
+      "drug_exposure",
+      "visit_occurrence"
+    ],
+    "description": "Resolve visit IDs, person identity and event/start timestamp against linked hospitalization boundaries."
+  },
+  {
+    "id": "microbiology_ast_result_representation",
+    "topic": "microbiology_ast",
+    "path": "sql/microbiology_ast_result_representation.sql",
+    "required_tables": [
+      "concept",
+      "measurement"
+    ],
+    "description": "Separate provisional primary-culture, reflex and AST concepts, and inspect coded-organism and S/I/R representation without computing positivity."
+  },
+  {
+    "id": "microbiology_ast_event_linkage",
+    "topic": "microbiology_ast",
+    "path": "sql/microbiology_ast_event_linkage.sql",
+    "required_tables": [
+      "concept",
+      "measurement",
+      "specimen"
+    ],
+    "description": "Check v5.4 event-field links to specific Specimen and Measurement endpoints, resolving IDs and person identity."
+  },
+  {
+    "id": "microbiology_ast_fact_linkage",
+    "topic": "microbiology_ast",
+    "path": "sql/microbiology_ast_fact_linkage.sql",
+    "required_tables": [
+      "concept",
+      "domain",
+      "fact_relationship",
+      "measurement",
+      "specimen"
+    ],
+    "description": "Endpoint-specific candidate microbiology relationships; does not mistake generic FACT_RELATIONSHIP population for valid culture-AST links."
+  },
+  {
+    "id": "fluid_balance_measurement_days",
+    "topic": "fluid_balance",
+    "path": "sql/fluid_balance_measurement_days.sql",
+    "required_tables": [
+      "concept",
+      "measurement"
+    ],
+    "description": "Candidate day-level co-availability of quantitative input, output and weight; no summation, conversion or net balance."
+  },
+  {
+    "id": "code_status_observation_transitions",
+    "topic": "code_status",
+    "path": "sql/code_status_observation_transitions.sql",
+    "required_tables": [
+      "concept",
+      "observation"
+    ],
+    "description": "Keep DNR/DNI/full-code/limited classes distinct, flag provenance conflicts, and count only provisional semantic changes."
+  }
+]

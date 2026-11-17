@@ -1,0 +1,1409 @@
+[
+  {
+    "query_id": "code_status",
+    "section": "Vocabulary",
+    "variable": "Known mapping concepts present in local vocabulary",
+    "kind": "text",
+    "definition": "Number of the four seed concept IDs found in CONCEPT, formatted as n / 4.",
+    "denominator": "Four seed IDs: 3175080, 4119499, 3172086, 3172879.",
+    "action": "Check missing seed IDs and vocabulary version; presence in CONCEPT does not establish use in patient data.",
+    "zero_action": "An empty or zero-valued inventory is not clinical absence. Check missing seed IDs and vocabulary version; presence in CONCEPT does not establish use in patient data.",
+    "notes": "No standard/validity restriction is applied to this count.",
+    "evidence": {
+      "sql_path": "sql/historical/code_status.sql",
+      "sql_sha256": "babeadcfe3ec77241ae3fb3f8255c3b8e614d52335973ab6de998eb818fa42fa",
+      "sql_locator": {
+        "line": 549,
+        "section": "Vocabulary",
+        "variable": "Known mapping concepts present in local vocabulary"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#concept"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "code_status",
+    "section": "Vocabulary",
+    "variable": "Candidate code-status concepts found by domain",
+    "kind": "text",
+    "definition": "Counts of candidate concepts in Observation and Condition domains, not clinical records.",
+    "denominator": "",
+    "action": "Inspect candidate concept relevance and subsequently check observed patient-data use.",
+    "zero_action": "An empty or zero-valued inventory is not clinical absence. Inspect candidate concept relevance and subsequently check observed patient-data use.",
+    "notes": "Candidate concepts use four seeds and concept-name patterns; candidate presence does not validate a code-status order.",
+    "evidence": {
+      "sql_path": "sql/historical/code_status.sql",
+      "sql_sha256": "babeadcfe3ec77241ae3fb3f8255c3b8e614d52335973ab6de998eb818fa42fa",
+      "sql_locator": {
+        "line": 565,
+        "section": "Vocabulary",
+        "variable": "Candidate code-status concepts found by domain"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#concept"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "code_status",
+    "section": "OBSERVATION",
+    "variable": "Code-status records (n)",
+    "kind": "count",
+    "definition": "Number of selected OBSERVATION rows.",
+    "denominator": "",
+    "action": "Verify the selected source concepts and local event semantics before analytical reuse.",
+    "zero_action": "No matching representation was detected under this SQL selection; check source availability, mapping and selection before interpreting clinical absence.",
+    "notes": "Candidate concepts use four seeds and concept-name patterns; candidate presence does not validate a code-status order. Counts are not prevalence or validated current status; non-null visit IDs are not referentially validated.",
+    "evidence": {
+      "sql_path": "sql/historical/code_status.sql",
+      "sql_sha256": "babeadcfe3ec77241ae3fb3f8255c3b8e614d52335973ab6de998eb818fa42fa",
+      "sql_locator": {
+        "line": 589,
+        "section": "OBSERVATION",
+        "variable": "Code-status records (n)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#observation"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "code_status",
+    "section": "OBSERVATION",
+    "variable": "Patients with code-status records (n)",
+    "kind": "count",
+    "definition": "Distinct person_id among selected OBSERVATION rows.",
+    "denominator": "",
+    "action": "Verify the selected source concepts and local event semantics before analytical reuse.",
+    "zero_action": "No matching representation was detected under this SQL selection; check source availability, mapping and selection before interpreting clinical absence.",
+    "notes": "Candidate concepts use four seeds and concept-name patterns; candidate presence does not validate a code-status order. Counts are not prevalence or validated current status; non-null visit IDs are not referentially validated.",
+    "evidence": {
+      "sql_path": "sql/historical/code_status.sql",
+      "sql_sha256": "babeadcfe3ec77241ae3fb3f8255c3b8e614d52335973ab6de998eb818fa42fa",
+      "sql_locator": {
+        "line": 599,
+        "section": "OBSERVATION",
+        "variable": "Patients with code-status records (n)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#observation"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "code_status",
+    "section": "OBSERVATION",
+    "variable": "Visits with code-status records (n)",
+    "kind": "count",
+    "definition": "Distinct (person_id, visit_occurrence_id) pairs among selected OBSERVATION rows with non-null visit_occurrence_id.",
+    "denominator": "",
+    "action": "Verify the selected source concepts and local event semantics before analytical reuse.",
+    "zero_action": "No matching representation was detected under this SQL selection; check source availability, mapping and selection before interpreting clinical absence.",
+    "notes": "Candidate concepts use four seeds and concept-name patterns; candidate presence does not validate a code-status order. Counts are not prevalence or validated current status; non-null visit IDs are not referentially validated.",
+    "evidence": {
+      "sql_path": "sql/historical/code_status.sql",
+      "sql_sha256": "babeadcfe3ec77241ae3fb3f8255c3b8e614d52335973ab6de998eb818fa42fa",
+      "sql_locator": {
+        "line": 609,
+        "section": "OBSERVATION",
+        "variable": "Visits with code-status records (n)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#observation",
+        "https://ohdsi.github.io/DataQualityDashboard/articles/checks/isForeignKey.html",
+        "https://ohdsi.github.io/DataQualityDashboard/articles/checks/withinVisitDates.html"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "code_status",
+    "section": "CONDITION_OCCURRENCE",
+    "variable": "Code-status-related records (n)",
+    "kind": "count",
+    "definition": "Number of selected CONDITION_OCCURRENCE rows.",
+    "denominator": "",
+    "action": "Verify the selected source concepts and local event semantics before analytical reuse.",
+    "zero_action": "No matching representation was detected under this SQL selection; check source availability, mapping and selection before interpreting clinical absence.",
+    "notes": "Candidate concepts use four seeds and concept-name patterns; candidate presence does not validate a code-status order. Counts are not prevalence or validated current status; non-null visit IDs are not referentially validated.",
+    "evidence": {
+      "sql_path": "sql/historical/code_status.sql",
+      "sql_sha256": "babeadcfe3ec77241ae3fb3f8255c3b8e614d52335973ab6de998eb818fa42fa",
+      "sql_locator": {
+        "line": 754,
+        "section": "CONDITION_OCCURRENCE",
+        "variable": "Code-status-related records (n)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#condition_occurrence"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "code_status",
+    "section": "CONDITION_OCCURRENCE",
+    "variable": "Patients with code-status-related records (n)",
+    "kind": "count",
+    "definition": "Distinct person_id among selected CONDITION_OCCURRENCE rows.",
+    "denominator": "",
+    "action": "Verify the selected source concepts and local event semantics before analytical reuse.",
+    "zero_action": "No matching representation was detected under this SQL selection; check source availability, mapping and selection before interpreting clinical absence.",
+    "notes": "Candidate concepts use four seeds and concept-name patterns; candidate presence does not validate a code-status order. Counts are not prevalence or validated current status; non-null visit IDs are not referentially validated.",
+    "evidence": {
+      "sql_path": "sql/historical/code_status.sql",
+      "sql_sha256": "babeadcfe3ec77241ae3fb3f8255c3b8e614d52335973ab6de998eb818fa42fa",
+      "sql_locator": {
+        "line": 764,
+        "section": "CONDITION_OCCURRENCE",
+        "variable": "Patients with code-status-related records (n)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#condition_occurrence"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "code_status",
+    "section": "OBSERVATION",
+    "variable": "observation_datetime populated (%)",
+    "kind": "percent",
+    "definition": "100 × selected OBSERVATION rows satisfying observation_datetime IS NOT NULL / selected OBSERVATION rows.",
+    "denominator": "Selected OBSERVATION rows with candidate observation_concept_id, observation_source_concept_id or value_as_concept_id.",
+    "action": "Inspect missing observation_datetime and verify its semantics; populated IDs/values do not prove valid linkage or a correct status.",
+    "zero_action": "The reported percentage rounds to 0.0%; a small nonzero numerator may remain. Check raw numerator and denominator before asserting no eligible items meet the condition. Inspect missing observation_datetime and verify its semantics; populated IDs/values do not prove valid linkage or a correct status.",
+    "notes": "N/A in this SQL means zero selected OBSERVATION rows; completeness is conditional on candidate selection. Missing datetime limits time-resolved use but is not by itself a CDM violation; inspect available date fields and source precision.",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/code_status.sql",
+      "sql_sha256": "babeadcfe3ec77241ae3fb3f8255c3b8e614d52335973ab6de998eb818fa42fa",
+      "sql_locator": {
+        "line": 619,
+        "section": "OBSERVATION",
+        "variable": "observation_datetime populated (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#observation"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "code_status",
+    "section": "OBSERVATION",
+    "variable": "visit_occurrence_id populated (%)",
+    "kind": "percent",
+    "definition": "100 × selected OBSERVATION rows satisfying visit_occurrence_id IS NOT NULL / selected OBSERVATION rows.",
+    "denominator": "Selected OBSERVATION rows with candidate observation_concept_id, observation_source_concept_id or value_as_concept_id.",
+    "action": "Inspect missing visit_occurrence_id and verify its semantics; populated IDs/values do not prove valid linkage or a correct status.",
+    "zero_action": "The reported percentage rounds to 0.0%; a small nonzero numerator may remain. Check raw numerator and denominator before asserting no eligible items meet the condition. Inspect missing visit_occurrence_id and verify its semantics; populated IDs/values do not prove valid linkage or a correct status.",
+    "notes": "N/A in this SQL means zero selected OBSERVATION rows; completeness is conditional on candidate selection.",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/code_status.sql",
+      "sql_sha256": "babeadcfe3ec77241ae3fb3f8255c3b8e614d52335973ab6de998eb818fa42fa",
+      "sql_locator": {
+        "line": 639,
+        "section": "OBSERVATION",
+        "variable": "visit_occurrence_id populated (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#observation",
+        "https://ohdsi.github.io/DataQualityDashboard/articles/checks/isForeignKey.html",
+        "https://ohdsi.github.io/DataQualityDashboard/articles/checks/withinVisitDates.html"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "code_status",
+    "section": "OBSERVATION",
+    "variable": "visit_detail_id populated (%)",
+    "kind": "percent",
+    "definition": "100 × selected OBSERVATION rows satisfying visit_detail_id IS NOT NULL / selected OBSERVATION rows.",
+    "denominator": "Selected OBSERVATION rows with candidate observation_concept_id, observation_source_concept_id or value_as_concept_id.",
+    "action": "Inspect missing visit_detail_id and verify its semantics; populated IDs/values do not prove valid linkage or a correct status.",
+    "zero_action": "The reported percentage rounds to 0.0%; a small nonzero numerator may remain. Check raw numerator and denominator before asserting no eligible items meet the condition. Inspect missing visit_detail_id and verify its semantics; populated IDs/values do not prove valid linkage or a correct status.",
+    "notes": "N/A in this SQL means zero selected OBSERVATION rows; completeness is conditional on candidate selection.",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/code_status.sql",
+      "sql_sha256": "babeadcfe3ec77241ae3fb3f8255c3b8e614d52335973ab6de998eb818fa42fa",
+      "sql_locator": {
+        "line": 659,
+        "section": "OBSERVATION",
+        "variable": "visit_detail_id populated (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#observation",
+        "https://ohdsi.github.io/DataQualityDashboard/articles/checks/isForeignKey.html",
+        "https://ohdsi.github.io/DataQualityDashboard/articles/checks/withinVisitDates.html"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "code_status",
+    "section": "OBSERVATION",
+    "variable": "value_as_concept_id populated (%)",
+    "kind": "percent",
+    "definition": "100 × selected OBSERVATION rows satisfying COALESCE(value_as_concept_id,0) <> 0 / selected OBSERVATION rows.",
+    "denominator": "Selected OBSERVATION rows with candidate observation_concept_id, observation_source_concept_id or value_as_concept_id.",
+    "action": "Inspect missing value_as_concept_id and verify its semantics; populated IDs/values do not prove valid linkage or a correct status.",
+    "zero_action": "The reported percentage rounds to 0.0%; a small nonzero numerator may remain. Check raw numerator and denominator before asserting no eligible items meet the condition. Inspect missing value_as_concept_id and verify its semantics; populated IDs/values do not prove valid linkage or a correct status.",
+    "notes": "N/A in this SQL means zero selected OBSERVATION rows; completeness is conditional on candidate selection. This optional result field need not be populated for every observation; inspect concept and alternative value representations before declaring a missing clinical status.",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/code_status.sql",
+      "sql_sha256": "babeadcfe3ec77241ae3fb3f8255c3b8e614d52335973ab6de998eb818fa42fa",
+      "sql_locator": {
+        "line": 679,
+        "section": "OBSERVATION",
+        "variable": "value_as_concept_id populated (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#observation"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "code_status",
+    "section": "OBSERVATION",
+    "variable": "value_source_value populated (%)",
+    "kind": "percent",
+    "definition": "100 × selected OBSERVATION rows satisfying NULLIF(TRIM(value_source_value),'') IS NOT NULL / selected OBSERVATION rows.",
+    "denominator": "Selected OBSERVATION rows with candidate observation_concept_id, observation_source_concept_id or value_as_concept_id.",
+    "action": "Inspect missing value_source_value and verify its semantics; populated IDs/values do not prove valid linkage or a correct status.",
+    "zero_action": "The reported percentage rounds to 0.0%; a small nonzero numerator may remain. Check raw numerator and denominator before asserting no eligible items meet the condition. Inspect missing value_source_value and verify its semantics; populated IDs/values do not prove valid linkage or a correct status.",
+    "notes": "N/A in this SQL means zero selected OBSERVATION rows; completeness is conditional on candidate selection. This optional result field need not be populated for every observation; inspect concept and alternative value representations before declaring a missing clinical status.",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/code_status.sql",
+      "sql_sha256": "babeadcfe3ec77241ae3fb3f8255c3b8e614d52335973ab6de998eb818fa42fa",
+      "sql_locator": {
+        "line": 699,
+        "section": "OBSERVATION",
+        "variable": "value_source_value populated (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#observation"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "code_status",
+    "section": "CONDITION_OCCURRENCE",
+    "variable": "condition_start_datetime populated (%)",
+    "kind": "percent",
+    "definition": "100 × selected CONDITION_OCCURRENCE rows with non-null condition_start_datetime / selected CONDITION_OCCURRENCE rows.",
+    "denominator": "Selected CONDITION_OCCURRENCE rows with candidate condition_concept_id or condition_source_concept_id.",
+    "action": "Inspect missing condition_start_datetime and verify its semantics; populated does not prove correctness.",
+    "zero_action": "The reported percentage rounds to 0.0%; a small nonzero numerator may remain. Check raw numerator and denominator before asserting no eligible items meet the condition. Inspect missing condition_start_datetime and verify its semantics; populated does not prove correctness.",
+    "notes": "N/A in this SQL means zero selected CONDITION_OCCURRENCE rows. Missing datetime limits time-resolved use but is not by itself a CDM violation; inspect available date fields and source precision.",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/code_status.sql",
+      "sql_sha256": "babeadcfe3ec77241ae3fb3f8255c3b8e614d52335973ab6de998eb818fa42fa",
+      "sql_locator": {
+        "line": 774,
+        "section": "CONDITION_OCCURRENCE",
+        "variable": "condition_start_datetime populated (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#condition_occurrence"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "code_status",
+    "section": "CONDITION_OCCURRENCE",
+    "variable": "visit_occurrence_id populated (%)",
+    "kind": "percent",
+    "definition": "100 × selected CONDITION_OCCURRENCE rows with non-null visit_occurrence_id / selected CONDITION_OCCURRENCE rows.",
+    "denominator": "Selected CONDITION_OCCURRENCE rows with candidate condition_concept_id or condition_source_concept_id.",
+    "action": "Inspect missing visit_occurrence_id and verify its semantics; populated does not prove correctness.",
+    "zero_action": "The reported percentage rounds to 0.0%; a small nonzero numerator may remain. Check raw numerator and denominator before asserting no eligible items meet the condition. Inspect missing visit_occurrence_id and verify its semantics; populated does not prove correctness.",
+    "notes": "N/A in this SQL means zero selected CONDITION_OCCURRENCE rows.",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/code_status.sql",
+      "sql_sha256": "babeadcfe3ec77241ae3fb3f8255c3b8e614d52335973ab6de998eb818fa42fa",
+      "sql_locator": {
+        "line": 794,
+        "section": "CONDITION_OCCURRENCE",
+        "variable": "visit_occurrence_id populated (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#condition_occurrence",
+        "https://ohdsi.github.io/DataQualityDashboard/articles/checks/isForeignKey.html",
+        "https://ohdsi.github.io/DataQualityDashboard/articles/checks/withinVisitDates.html"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "code_status",
+    "section": "OBSERVATION",
+    "variable": "Code-status categories observed",
+    "kind": "text",
+    "definition": "Counts of OBSERVATION rows assigned by ordered text-pattern CASE to FULL_CODE, DNR, DNI, DNR_DNI_LIMITED or OTHER_OR_UNRESOLVED.",
+    "denominator": "",
+    "action": "Review source text and concept/value mappings; retain DNR, DNI and full code separately where recoverable, and do not split the combined limited category without source evidence.",
+    "zero_action": "An empty or zero-valued inventory is not clinical absence. Review source text and concept/value mappings; retain DNR, DNI and full code separately where recoverable, and do not split the combined limited category without source evidence.",
+    "notes": "CASE priority affects classification; DNR_DNI_LIMITED combines joint DNR/DNI and limited/partial treatment. Not verified patient wishes or current status.",
+    "evidence": {
+      "sql_path": "sql/historical/code_status.sql",
+      "sql_sha256": "babeadcfe3ec77241ae3fb3f8255c3b8e614d52335973ab6de998eb818fa42fa",
+      "sql_locator": {
+        "line": 719,
+        "section": "OBSERVATION",
+        "variable": "Code-status categories observed"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#observation"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "code_status",
+    "section": "Longitudinal",
+    "variable": "Visits with >1 code-status record (%)",
+    "kind": "percent",
+    "definition": "100 × patient-visit pairs with more than one selected record in the union of selected OBSERVATION and CONDITION_OCCURRENCE / eligible patient-visit pairs.",
+    "denominator": "Distinct (person_id, visit_occurrence_id) pairs with non-null visit_occurrence_id and at least one selected event from either table.",
+    "action": "Inspect repeated documentation and cross-table duplicates before constructing a timeline.",
+    "zero_action": "The reported percentage rounds to 0.0%; a small nonzero numerator may remain. Check raw numerator and denominator before asserting no eligible items meet the condition. Inspect repeated documentation and cross-table duplicates before constructing a timeline.",
+    "notes": "Repeated records need not mean a status change. N/A means no eligible pairs; visit IDs are not validated against VISIT_OCCURRENCE.",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/code_status.sql",
+      "sql_sha256": "babeadcfe3ec77241ae3fb3f8255c3b8e614d52335973ab6de998eb818fa42fa",
+      "sql_locator": {
+        "line": 816,
+        "section": "Longitudinal",
+        "variable": "Visits with >1 code-status record (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#observation",
+        "https://ohdsi.github.io/DataQualityDashboard/articles/checks/isForeignKey.html",
+        "https://ohdsi.github.io/DataQualityDashboard/articles/checks/withinVisitDates.html"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "code_status",
+    "section": "Longitudinal",
+    "variable": "Visits with >1 distinct code-status category (%)",
+    "kind": "percent",
+    "definition": "100 × patient-visit pairs with more than one distinct category excluding OTHER_OR_UNRESOLVED in the union of selected OBSERVATION and CONDITION_OCCURRENCE / eligible patient-visit pairs.",
+    "denominator": "Distinct (person_id, visit_occurrence_id) pairs with non-null visit_occurrence_id and at least one selected event from either table.",
+    "action": "Inspect event timestamps, category semantics and conflicting documentation before inferring a transition.",
+    "zero_action": "The reported percentage rounds to 0.0%; a small nonzero numerator may remain. Check raw numerator and denominator before asserting no eligible items meet the condition. Inspect event timestamps, category semantics and conflicting documentation before inferring a transition.",
+    "notes": "No temporal ordering is used: different categories in one visit are not confirmed changes or conflicts. N/A means no eligible pairs; visit IDs are not validated against VISIT_OCCURRENCE.",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/code_status.sql",
+      "sql_sha256": "babeadcfe3ec77241ae3fb3f8255c3b8e614d52335973ab6de998eb818fa42fa",
+      "sql_locator": {
+        "line": 836,
+        "section": "Longitudinal",
+        "variable": "Visits with >1 distinct code-status category (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#observation",
+        "https://ohdsi.github.io/DataQualityDashboard/articles/checks/isForeignKey.html",
+        "https://ohdsi.github.io/DataQualityDashboard/articles/checks/withinVisitDates.html"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "code_status",
+    "section": "Observed representation",
+    "variable": "Top OBSERVATION concept -> value patterns",
+    "kind": "text",
+    "definition": "Top 15 pairs of observation concept name and value concept name, with selected OBSERVATION record counts.",
+    "denominator": "",
+    "action": "Review frequent patterns against source documentation, then inspect omitted rare patterns before finalizing categories.",
+    "zero_action": "An empty or zero-valued inventory is not clinical absence. Review frequent patterns against source documentation, then inspect omitted rare patterns before finalizing categories.",
+    "notes": "Top list is truncated and not an exhaustive mapping inventory; NONE means no aggregated patterns, not a clinical negative.",
+    "evidence": {
+      "sql_path": "sql/historical/code_status.sql",
+      "sql_sha256": "babeadcfe3ec77241ae3fb3f8255c3b8e614d52335973ab6de998eb818fa42fa",
+      "sql_locator": {
+        "line": 858,
+        "section": "Observed representation",
+        "variable": "Top OBSERVATION concept -> value patterns"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#observation"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "code_status",
+    "section": "Observed representation",
+    "variable": "Top OBSERVATION source -> value patterns",
+    "kind": "text",
+    "definition": "Top 15 pairs of observation_source_value and value_source_value, with selected OBSERVATION record counts.",
+    "denominator": "",
+    "action": "Review frequent patterns against source documentation, then inspect omitted rare patterns before finalizing categories.",
+    "zero_action": "An empty or zero-valued inventory is not clinical absence. Review frequent patterns against source documentation, then inspect omitted rare patterns before finalizing categories.",
+    "notes": "Top list is truncated and not an exhaustive mapping inventory; NONE means no aggregated patterns, not a clinical negative.",
+    "evidence": {
+      "sql_path": "sql/historical/code_status.sql",
+      "sql_sha256": "babeadcfe3ec77241ae3fb3f8255c3b8e614d52335973ab6de998eb818fa42fa",
+      "sql_locator": {
+        "line": 868,
+        "section": "Observed representation",
+        "variable": "Top OBSERVATION source -> value patterns"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#observation"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "code_status",
+    "section": "Observed representation",
+    "variable": "Top CONDITION_OCCURRENCE concepts",
+    "kind": "text",
+    "definition": "Top 15 condition concept names, with selected CONDITION_OCCURRENCE record counts.",
+    "denominator": "",
+    "action": "Review frequent patterns against source documentation, then inspect omitted rare patterns before finalizing categories.",
+    "zero_action": "An empty or zero-valued inventory is not clinical absence. Review frequent patterns against source documentation, then inspect omitted rare patterns before finalizing categories.",
+    "notes": "Top list is truncated and not an exhaustive mapping inventory; NONE means no aggregated patterns, not a clinical negative.",
+    "evidence": {
+      "sql_path": "sql/historical/code_status.sql",
+      "sql_sha256": "babeadcfe3ec77241ae3fb3f8255c3b8e614d52335973ab6de998eb818fa42fa",
+      "sql_locator": {
+        "line": 878,
+        "section": "Observed representation",
+        "variable": "Top CONDITION_OCCURRENCE concepts"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#observation"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "fluid_balance",
+    "section": "Coverage",
+    "variable": "Fluid intake records (n)",
+    "kind": "count",
+    "definition": "Number of selected fluid-event rows with component LIKE 'IN_%'.",
+    "denominator": "",
+    "action": "Validate intake/output components, duplicate records and coverage before deriving balance.",
+    "zero_action": "No matching representation was detected under this SQL selection; check source availability, mapping and selection before interpreting clinical absence.",
+    "notes": "Selected MEASUREMENT and OBSERVATION records are classified by seed concepts and concept-name patterns, without source-value discovery; not a fluid-overload phenotype. Numeric values are not required for these counts.",
+    "evidence": {
+      "sql_path": "sql/historical/fluid_balance.sql",
+      "sql_sha256": "d9d9f70d497bc81e505e5c5ddb36257c6dd505a00f558bbed1057343d4396fb5",
+      "sql_locator": {
+        "line": 527,
+        "section": "Coverage",
+        "variable": "Fluid intake records (n)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "fluid_balance",
+    "section": "Coverage",
+    "variable": "Patients with fluid intake records (n)",
+    "kind": "count",
+    "definition": "Distinct person_id among selected fluid-event rows with component LIKE 'IN_%'.",
+    "denominator": "",
+    "action": "Validate intake/output components, duplicate records and coverage before deriving balance.",
+    "zero_action": "No matching representation was detected under this SQL selection; check source availability, mapping and selection before interpreting clinical absence.",
+    "notes": "Selected MEASUREMENT and OBSERVATION records are classified by seed concepts and concept-name patterns, without source-value discovery; not a fluid-overload phenotype. Numeric values are not required for these counts.",
+    "evidence": {
+      "sql_path": "sql/historical/fluid_balance.sql",
+      "sql_sha256": "d9d9f70d497bc81e505e5c5ddb36257c6dd505a00f558bbed1057343d4396fb5",
+      "sql_locator": {
+        "line": 534,
+        "section": "Coverage",
+        "variable": "Patients with fluid intake records (n)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "fluid_balance",
+    "section": "Coverage",
+    "variable": "Fluid output records (n)",
+    "kind": "count",
+    "definition": "Number of selected fluid-event rows with component LIKE 'OUT_%'.",
+    "denominator": "",
+    "action": "Validate intake/output components, duplicate records and coverage before deriving balance.",
+    "zero_action": "No matching representation was detected under this SQL selection; check source availability, mapping and selection before interpreting clinical absence.",
+    "notes": "Selected MEASUREMENT and OBSERVATION records are classified by seed concepts and concept-name patterns, without source-value discovery; not a fluid-overload phenotype. Numeric values are not required for these counts.",
+    "evidence": {
+      "sql_path": "sql/historical/fluid_balance.sql",
+      "sql_sha256": "d9d9f70d497bc81e505e5c5ddb36257c6dd505a00f558bbed1057343d4396fb5",
+      "sql_locator": {
+        "line": 540,
+        "section": "Coverage",
+        "variable": "Fluid output records (n)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "fluid_balance",
+    "section": "Coverage",
+    "variable": "Patients with fluid output records (n)",
+    "kind": "count",
+    "definition": "Distinct person_id among selected fluid-event rows with component LIKE 'OUT_%'.",
+    "denominator": "",
+    "action": "Validate intake/output components, duplicate records and coverage before deriving balance.",
+    "zero_action": "No matching representation was detected under this SQL selection; check source availability, mapping and selection before interpreting clinical absence.",
+    "notes": "Selected MEASUREMENT and OBSERVATION records are classified by seed concepts and concept-name patterns, without source-value discovery; not a fluid-overload phenotype. Numeric values are not required for these counts.",
+    "evidence": {
+      "sql_path": "sql/historical/fluid_balance.sql",
+      "sql_sha256": "d9d9f70d497bc81e505e5c5ddb36257c6dd505a00f558bbed1057343d4396fb5",
+      "sql_locator": {
+        "line": 546,
+        "section": "Coverage",
+        "variable": "Patients with fluid output records (n)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "fluid_balance",
+    "section": "Representation",
+    "variable": "Fluid components observed",
+    "kind": "text",
+    "definition": "Selected fluid-event record counts grouped by assigned intake/output component.",
+    "denominator": "",
+    "action": "Check which components are represented and avoid double-counting component measures and totals.",
+    "zero_action": "An empty or zero-valued inventory is not clinical absence. Check which components are represented and avoid double-counting component measures and totals.",
+    "notes": "Selected MEASUREMENT and OBSERVATION records are classified by seed concepts and concept-name patterns, without source-value discovery; not a fluid-overload phenotype. Counts do not establish complete intake/output recording.",
+    "evidence": {
+      "sql_path": "sql/historical/fluid_balance.sql",
+      "sql_sha256": "d9d9f70d497bc81e505e5c5ddb36257c6dd505a00f558bbed1057343d4396fb5",
+      "sql_locator": {
+        "line": 552,
+        "section": "Representation",
+        "variable": "Fluid components observed"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "fluid_balance",
+    "section": "Quantitative readiness",
+    "variable": "Numeric value populated (%)",
+    "kind": "percent",
+    "definition": "100 × selected fluid-event rows satisfying value_as_number IS NOT NULL / denominator.",
+    "denominator": "All selected fluid-event rows.",
+    "action": "Check missing values, plausible magnitudes, units and whether values are increments or cumulative totals.",
+    "zero_action": "The reported percentage rounds to 0.0%; a small nonzero numerator may remain. Check raw numerator and denominator before asserting no eligible items meet the condition. Check missing values, plausible magnitudes, units and whether values are increments or cumulative totals.",
+    "notes": "Conditional field presence only. N/A means zero denominator in this SQL. No values, units or links are validated.",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/fluid_balance.sql",
+      "sql_sha256": "d9d9f70d497bc81e505e5c5ddb36257c6dd505a00f558bbed1057343d4396fb5",
+      "sql_locator": {
+        "line": 558,
+        "section": "Quantitative readiness",
+        "variable": "Numeric value populated (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "fluid_balance",
+    "section": "Quantitative readiness",
+    "variable": "Unit populated among numeric records (%)",
+    "kind": "percent",
+    "definition": "100 × selected fluid-event rows satisfying numeric value present and nonzero unit_concept_id or nonblank unit_source_value / denominator.",
+    "denominator": "Selected fluid-event rows with non-null value_as_number.",
+    "action": "Resolve and harmonize units; presence does not establish a valid volume unit or comparability.",
+    "zero_action": "The reported percentage rounds to 0.0%; a small nonzero numerator may remain. Check raw numerator and denominator before asserting no eligible items meet the condition. Resolve and harmonize units; presence does not establish a valid volume unit or comparability.",
+    "notes": "Conditional field presence only. N/A means zero denominator in this SQL. No values, units or links are validated.",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/fluid_balance.sql",
+      "sql_sha256": "d9d9f70d497bc81e505e5c5ddb36257c6dd505a00f558bbed1057343d4396fb5",
+      "sql_locator": {
+        "line": 570,
+        "section": "Quantitative readiness",
+        "variable": "Unit populated among numeric records (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "fluid_balance",
+    "section": "Temporal",
+    "variable": "Event datetime populated (%)",
+    "kind": "percent",
+    "definition": "100 × selected fluid-event rows satisfying event_datetime IS NOT NULL / denominator.",
+    "denominator": "All selected fluid-event rows.",
+    "action": "Check missing timestamps, recording times versus clinical times, and interval/cumulative semantics.",
+    "zero_action": "The reported percentage rounds to 0.0%; a small nonzero numerator may remain. Check raw numerator and denominator before asserting no eligible items meet the condition. Check missing timestamps, recording times versus clinical times, and interval/cumulative semantics.",
+    "notes": "Conditional field presence only. N/A means zero denominator in this SQL. No values, units or links are validated. Missing datetime limits time-resolved use but is not by itself a CDM violation; inspect available date fields and source precision.",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/fluid_balance.sql",
+      "sql_sha256": "d9d9f70d497bc81e505e5c5ddb36257c6dd505a00f558bbed1057343d4396fb5",
+      "sql_locator": {
+        "line": 582,
+        "section": "Temporal",
+        "variable": "Event datetime populated (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "fluid_balance",
+    "section": "Linkage",
+    "variable": "visit_occurrence_id populated (%)",
+    "kind": "percent",
+    "definition": "100 × selected fluid-event rows satisfying visit_occurrence_id IS NOT NULL / denominator.",
+    "denominator": "All selected fluid-event rows.",
+    "action": "Validate visit existence, person identity and event/visit date alignment, accounting for documented source-specific exceptions separately.",
+    "zero_action": "The reported percentage rounds to 0.0%; a small nonzero numerator may remain. Check raw numerator and denominator before asserting no eligible items meet the condition. Validate visit existence, person identity and temporal containment separately.",
+    "notes": "Conditional field presence only. N/A means zero denominator in this SQL. No values, units or links are validated.",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/fluid_balance.sql",
+      "sql_sha256": "d9d9f70d497bc81e505e5c5ddb36257c6dd505a00f558bbed1057343d4396fb5",
+      "sql_locator": {
+        "line": 594,
+        "section": "Linkage",
+        "variable": "visit_occurrence_id populated (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement",
+        "https://ohdsi.github.io/DataQualityDashboard/articles/checks/isForeignKey.html",
+        "https://ohdsi.github.io/DataQualityDashboard/articles/checks/withinVisitDates.html"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "fluid_balance",
+    "section": "Linkage",
+    "variable": "visit_detail_id populated (%)",
+    "kind": "percent",
+    "definition": "100 × selected fluid-event rows satisfying visit_detail_id IS NOT NULL / denominator.",
+    "denominator": "All selected fluid-event rows.",
+    "action": "Validate visit-detail existence, person identity and ICU interval correspondence separately.",
+    "zero_action": "The reported percentage rounds to 0.0%; a small nonzero numerator may remain. Check raw numerator and denominator before asserting no eligible items meet the condition. Validate visit-detail existence, person identity and ICU interval correspondence separately.",
+    "notes": "Conditional field presence only. N/A means zero denominator in this SQL. No values, units or links are validated.",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/fluid_balance.sql",
+      "sql_sha256": "d9d9f70d497bc81e505e5c5ddb36257c6dd505a00f558bbed1057343d4396fb5",
+      "sql_locator": {
+        "line": 606,
+        "section": "Linkage",
+        "variable": "visit_detail_id populated (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement",
+        "https://ohdsi.github.io/DataQualityDashboard/articles/checks/isForeignKey.html",
+        "https://ohdsi.github.io/DataQualityDashboard/articles/checks/withinVisitDates.html"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "fluid_balance",
+    "section": "Quantitative readiness",
+    "variable": "Records with numeric value + unit + datetime + visit (%)",
+    "kind": "percent",
+    "definition": "100 × selected fluid-event rows satisfying non-null value_as_number, unit present (nonzero concept ID or nonblank source unit), non-null event_datetime and visit_occurrence_id / denominator.",
+    "denominator": "All selected fluid-event rows.",
+    "action": "Investigate which prerequisite is missing, then validate units, timestamps and links; joint presence alone does not make balance usable.",
+    "zero_action": "The reported percentage rounds to 0.0%; a small nonzero numerator may remain. Check raw numerator and denominator before asserting no eligible items meet the condition. Investigate which prerequisite is missing, then validate units, timestamps and links; joint presence alone does not make balance usable.",
+    "notes": "Conditional field presence only. N/A means zero denominator in this SQL. No values, units or links are validated.",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/fluid_balance.sql",
+      "sql_sha256": "d9d9f70d497bc81e505e5c5ddb36257c6dd505a00f558bbed1057343d4396fb5",
+      "sql_locator": {
+        "line": 618,
+        "section": "Quantitative readiness",
+        "variable": "Records with numeric value + unit + datetime + visit (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement",
+        "https://ohdsi.github.io/DataQualityDashboard/articles/checks/isForeignKey.html",
+        "https://ohdsi.github.io/DataQualityDashboard/articles/checks/withinVisitDates.html"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "fluid_balance",
+    "section": "Reconstructability",
+    "variable": "Patient-visit-days with both numeric intake and output (%)",
+    "kind": "percent",
+    "definition": "100 × eligible patient-visit-days with at least one numeric intake and at least one numeric output / all eligible patient-visit-days.",
+    "denominator": "Distinct (person_id, visit_occurrence_id, event_date) groups with at least one selected fluid event and non-null visit ID and event_date.",
+    "action": "Check completeness of both streams, units, time windows and duplicate totals before calculating daily net balance.",
+    "zero_action": "The reported percentage rounds to 0.0%; a small nonzero numerator may remain. Check raw numerator and denominator before asserting no eligible items meet the condition. Check completeness of both streams, units, time windows and duplicate totals before calculating daily net balance.",
+    "notes": "Denominator includes days with nonnumeric events only. Does not enumerate all hospital days; units and event_datetime are not required. N/A means zero eligible groups.",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/fluid_balance.sql",
+      "sql_sha256": "d9d9f70d497bc81e505e5c5ddb36257c6dd505a00f558bbed1057343d4396fb5",
+      "sql_locator": {
+        "line": 630,
+        "section": "Reconstructability",
+        "variable": "Patient-visit-days with both numeric intake and output (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement",
+        "https://ohdsi.github.io/DataQualityDashboard/articles/checks/isForeignKey.html",
+        "https://ohdsi.github.io/DataQualityDashboard/articles/checks/withinVisitDates.html"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "fluid_balance",
+    "section": "Normalization",
+    "variable": "Fluid-data visits with any body-weight measurement (%)",
+    "kind": "percent",
+    "definition": "100 × fluid-data patient-visit pairs also having a selected numeric body-weight MEASUREMENT in the same pair / fluid-data patient-visit pairs.",
+    "denominator": "Distinct (person_id, visit_occurrence_id) from selected fluid events with non-null visit ID.",
+    "action": "Validate weight units, plausibility, timing and baseline/current weight choice before normalization.",
+    "zero_action": "The reported percentage rounds to 0.0%; a small nonzero numerator may remain. Check raw numerator and denominator before asserting no eligible items meet the condition. Validate weight units, plausibility, timing and baseline/current weight choice before normalization.",
+    "notes": "Any numeric weight in the same visit qualifies, without proximity, units or timestamp requirements. Not necessarily baseline weight. N/A means no eligible fluid-data visits.",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/fluid_balance.sql",
+      "sql_sha256": "d9d9f70d497bc81e505e5c5ddb36257c6dd505a00f558bbed1057343d4396fb5",
+      "sql_locator": {
+        "line": 642,
+        "section": "Normalization",
+        "variable": "Fluid-data visits with any body-weight measurement (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement",
+        "https://ohdsi.github.io/DataQualityDashboard/articles/checks/isForeignKey.html",
+        "https://ohdsi.github.io/DataQualityDashboard/articles/checks/withinVisitDates.html"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "fluid_balance",
+    "section": "Observed representation",
+    "variable": "Top intake concepts",
+    "kind": "text",
+    "definition": "Top 12 intake concept names with selected fluid-event record counts.",
+    "denominator": "",
+    "action": "Review represented components and units, distinguishing totals from components and rates from volumes; inspect rare entries omitted from the top list.",
+    "zero_action": "An empty or zero-valued inventory is not clinical absence. Review represented components and units, distinguishing totals from components and rates from volumes; inspect rare entries omitted from the top list.",
+    "notes": "Truncated inventory; NONE means no aggregated entries, not clinical absence.",
+    "evidence": {
+      "sql_path": "sql/historical/fluid_balance.sql",
+      "sql_sha256": "d9d9f70d497bc81e505e5c5ddb36257c6dd505a00f558bbed1057343d4396fb5",
+      "sql_locator": {
+        "line": 654,
+        "section": "Observed representation",
+        "variable": "Top intake concepts"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "fluid_balance",
+    "section": "Observed representation",
+    "variable": "Top output concepts",
+    "kind": "text",
+    "definition": "Top 12 output concept names with selected fluid-event record counts.",
+    "denominator": "",
+    "action": "Review represented components and units, distinguishing totals from components and rates from volumes; inspect rare entries omitted from the top list.",
+    "zero_action": "An empty or zero-valued inventory is not clinical absence. Review represented components and units, distinguishing totals from components and rates from volumes; inspect rare entries omitted from the top list.",
+    "notes": "Truncated inventory; NONE means no aggregated entries, not clinical absence.",
+    "evidence": {
+      "sql_path": "sql/historical/fluid_balance.sql",
+      "sql_sha256": "d9d9f70d497bc81e505e5c5ddb36257c6dd505a00f558bbed1057343d4396fb5",
+      "sql_locator": {
+        "line": 660,
+        "section": "Observed representation",
+        "variable": "Top output concepts"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "fluid_balance",
+    "section": "Observed representation",
+    "variable": "Top units among numeric records",
+    "kind": "text",
+    "definition": "Top 12 unit names among numeric fluid-event records, preferring concept name, then trimmed source unit, then UNSPECIFIED, with counts.",
+    "denominator": "",
+    "action": "Review represented components and units, distinguishing totals from components and rates from volumes; inspect rare entries omitted from the top list.",
+    "zero_action": "An empty or zero-valued inventory is not clinical absence. Review represented components and units, distinguishing totals from components and rates from volumes; inspect rare entries omitted from the top list.",
+    "notes": "Truncated inventory; NONE means no aggregated entries, not clinical absence.",
+    "evidence": {
+      "sql_path": "sql/historical/fluid_balance.sql",
+      "sql_sha256": "d9d9f70d497bc81e505e5c5ddb36257c6dd505a00f558bbed1057343d4396fb5",
+      "sql_locator": {
+        "line": 666,
+        "section": "Observed representation",
+        "variable": "Top units among numeric records"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "dialysis_rrt",
+    "section": "RRT representation",
+    "variable": "RRT records by table",
+    "kind": "text",
+    "definition": "Separate candidate record counts in PROCEDURE_OCCURRENCE, OBSERVATION and DEVICE_EXPOSURE.",
+    "denominator": "",
+    "action": "Review candidate concepts and possible cross-table duplicates before defining treatment events.",
+    "zero_action": "An empty or zero-valued inventory is not clinical absence. Review candidate concepts and possible cross-table duplicates before defining treatment events.",
+    "notes": "RRT candidates use concept-name patterns in Procedure, Observation and Device; source-only representations may be missed. Not validated sessions, initiation, AKI or treatment indication.",
+    "evidence": {
+      "sql_path": "sql/historical/dialysis_rrt.sql",
+      "sql_sha256": "808155968766f8b5ef06893bfd7c7b4d525dd896a168337e413c07e2c1064b30",
+      "sql_locator": {
+        "line": 417,
+        "section": "RRT representation",
+        "variable": "RRT records by table"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "dialysis_rrt",
+    "section": "RRT representation",
+    "variable": "Patients with RRT evidence (n)",
+    "kind": "count",
+    "definition": "Distinct person_id across the union of candidate RRT records in three tables.",
+    "denominator": "",
+    "action": "Verify candidate treatment semantics before defining exposed patients.",
+    "zero_action": "No matching representation was detected under this SQL selection; check source availability, mapping and selection before interpreting clinical absence.",
+    "notes": "RRT candidates use concept-name patterns in Procedure, Observation and Device; source-only representations may be missed. Not validated sessions, initiation, AKI or treatment indication.",
+    "evidence": {
+      "sql_path": "sql/historical/dialysis_rrt.sql",
+      "sql_sha256": "808155968766f8b5ef06893bfd7c7b4d525dd896a168337e413c07e2c1064b30",
+      "sql_locator": {
+        "line": 430,
+        "section": "RRT representation",
+        "variable": "Patients with RRT evidence (n)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "dialysis_rrt",
+    "section": "RRT representation",
+    "variable": "RRT modality records",
+    "kind": "text",
+    "definition": "Counts of candidate RRT records assigned CRRT_CKRT, HEMODIALYSIS, PERITONEAL_DIALYSIS or OTHER_RRT by ordered concept-name patterns.",
+    "denominator": "",
+    "action": "Verify modality concepts locally; separate monitoring/access/documentation from treatment and inspect unclassified candidates.",
+    "zero_action": "An empty or zero-valued inventory is not clinical absence. Verify modality concepts locally; separate monitoring/access/documentation from treatment and inspect unclassified candidates.",
+    "notes": "RRT candidates use concept-name patterns in Procedure, Observation and Device; source-only representations may be missed. Not validated sessions, initiation, AKI or treatment indication. Counts are records, not sessions; candidates with null modality are not counted in the displayed categories.",
+    "evidence": {
+      "sql_path": "sql/historical/dialysis_rrt.sql",
+      "sql_sha256": "808155968766f8b5ef06893bfd7c7b4d525dd896a168337e413c07e2c1064b30",
+      "sql_locator": {
+        "line": 437,
+        "section": "RRT representation",
+        "variable": "RRT modality records"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "dialysis_rrt",
+    "section": "Temporal",
+    "variable": "RRT event datetime populated (%)",
+    "kind": "percent",
+    "definition": "100 × candidate RRT records with non-null event_datetime / all candidate RRT records.",
+    "denominator": "All candidate RRT records in the union of PROCEDURE_OCCURRENCE, OBSERVATION and DEVICE_EXPOSURE.",
+    "action": "Investigate missing event_datetime and validate clinical timing/link identity before reconstructing sessions.",
+    "zero_action": "The reported percentage rounds to 0.0%; a small nonzero numerator may remain. Check raw numerator and denominator before asserting no eligible items meet the condition. Investigate missing event_datetime and validate clinical timing/link identity before reconstructing sessions.",
+    "notes": "RRT candidates use concept-name patterns in Procedure, Observation and Device; source-only representations may be missed. Not validated sessions, initiation, AKI or treatment indication. Event time is procedure/observation datetime or device start datetime, not verified treatment initiation. N/A means zero candidate records. Missing datetime limits time-resolved use but is not by itself a CDM violation; inspect available date fields and source precision.",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/dialysis_rrt.sql",
+      "sql_sha256": "808155968766f8b5ef06893bfd7c7b4d525dd896a168337e413c07e2c1064b30",
+      "sql_locator": {
+        "line": 447,
+        "section": "Temporal",
+        "variable": "RRT event datetime populated (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "dialysis_rrt",
+    "section": "Linkage",
+    "variable": "RRT visit_occurrence_id populated (%)",
+    "kind": "percent",
+    "definition": "100 × candidate RRT records with non-null visit_occurrence_id / all candidate RRT records.",
+    "denominator": "All candidate RRT records in the union of PROCEDURE_OCCURRENCE, OBSERVATION and DEVICE_EXPOSURE.",
+    "action": "Investigate missing visit_occurrence_id and validate clinical timing/link identity before reconstructing sessions.",
+    "zero_action": "The reported percentage rounds to 0.0%; a small nonzero numerator may remain. Check raw numerator and denominator before asserting no eligible items meet the condition. Investigate missing visit_occurrence_id and validate clinical timing/link identity before reconstructing sessions.",
+    "notes": "RRT candidates use concept-name patterns in Procedure, Observation and Device; source-only representations may be missed. Not validated sessions, initiation, AKI or treatment indication. Event time is procedure/observation datetime or device start datetime, not verified treatment initiation. N/A means zero candidate records.",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/dialysis_rrt.sql",
+      "sql_sha256": "808155968766f8b5ef06893bfd7c7b4d525dd896a168337e413c07e2c1064b30",
+      "sql_locator": {
+        "line": 460,
+        "section": "Linkage",
+        "variable": "RRT visit_occurrence_id populated (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement",
+        "https://ohdsi.github.io/DataQualityDashboard/articles/checks/isForeignKey.html",
+        "https://ohdsi.github.io/DataQualityDashboard/articles/checks/withinVisitDates.html"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "dialysis_rrt",
+    "section": "Linkage",
+    "variable": "RRT visit_detail_id populated (%)",
+    "kind": "percent",
+    "definition": "100 × candidate RRT records with non-null visit_detail_id / all candidate RRT records.",
+    "denominator": "All candidate RRT records in the union of PROCEDURE_OCCURRENCE, OBSERVATION and DEVICE_EXPOSURE.",
+    "action": "Investigate missing visit_detail_id and validate clinical timing/link identity before reconstructing sessions.",
+    "zero_action": "The reported percentage rounds to 0.0%; a small nonzero numerator may remain. Check raw numerator and denominator before asserting no eligible items meet the condition. Investigate missing visit_detail_id and validate clinical timing/link identity before reconstructing sessions.",
+    "notes": "RRT candidates use concept-name patterns in Procedure, Observation and Device; source-only representations may be missed. Not validated sessions, initiation, AKI or treatment indication. Event time is procedure/observation datetime or device start datetime, not verified treatment initiation. N/A means zero candidate records.",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/dialysis_rrt.sql",
+      "sql_sha256": "808155968766f8b5ef06893bfd7c7b4d525dd896a168337e413c07e2c1064b30",
+      "sql_locator": {
+        "line": 473,
+        "section": "Linkage",
+        "variable": "RRT visit_detail_id populated (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement",
+        "https://ohdsi.github.io/DataQualityDashboard/articles/checks/isForeignKey.html",
+        "https://ohdsi.github.io/DataQualityDashboard/articles/checks/withinVisitDates.html"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "dialysis_rrt",
+    "section": "Fluid removal",
+    "variable": "Actual fluid-removal records (n)",
+    "kind": "count",
+    "definition": "Number of selected MEASUREMENT rows classified ACTUAL by seed or concept-name patterns.",
+    "denominator": "",
+    "action": "Validate actual versus prescribed/target semantics; do not substitute target amounts for delivered removal.",
+    "zero_action": "No matching representation was detected under this SQL selection; check source availability, mapping and selection before interpreting clinical absence.",
+    "notes": "Numeric values are not required; ACTUAL is a candidate classification, not source-validated delivered volume.",
+    "evidence": {
+      "sql_path": "sql/historical/dialysis_rrt.sql",
+      "sql_sha256": "808155968766f8b5ef06893bfd7c7b4d525dd896a168337e413c07e2c1064b30",
+      "sql_locator": {
+        "line": 486,
+        "section": "Fluid removal",
+        "variable": "Actual fluid-removal records (n)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "dialysis_rrt",
+    "section": "Fluid removal",
+    "variable": "Patients with actual fluid-removal records (n)",
+    "kind": "count",
+    "definition": "Distinct person_id among selected MEASUREMENT rows classified ACTUAL.",
+    "denominator": "",
+    "action": "Validate actual versus prescribed/target semantics; do not substitute target amounts for delivered removal.",
+    "zero_action": "No matching representation was detected under this SQL selection; check source availability, mapping and selection before interpreting clinical absence.",
+    "notes": "Numeric values are not required; ACTUAL is a candidate classification, not source-validated delivered volume.",
+    "evidence": {
+      "sql_path": "sql/historical/dialysis_rrt.sql",
+      "sql_sha256": "808155968766f8b5ef06893bfd7c7b4d525dd896a168337e413c07e2c1064b30",
+      "sql_locator": {
+        "line": 493,
+        "section": "Fluid removal",
+        "variable": "Patients with actual fluid-removal records (n)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "dialysis_rrt",
+    "section": "Fluid removal",
+    "variable": "Prescribed/target fluid-removal records (n)",
+    "kind": "count",
+    "definition": "Number of selected MEASUREMENT rows classified TARGET by seed or concept-name patterns.",
+    "denominator": "",
+    "action": "Validate actual versus prescribed/target semantics; do not substitute target amounts for delivered removal.",
+    "zero_action": "No matching representation was detected under this SQL selection; check source availability, mapping and selection before interpreting clinical absence.",
+    "notes": "Numeric values are not required; ACTUAL is a candidate classification, not source-validated delivered volume.",
+    "evidence": {
+      "sql_path": "sql/historical/dialysis_rrt.sql",
+      "sql_sha256": "808155968766f8b5ef06893bfd7c7b4d525dd896a168337e413c07e2c1064b30",
+      "sql_locator": {
+        "line": 552,
+        "section": "Fluid removal",
+        "variable": "Prescribed/target fluid-removal records (n)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "dialysis_rrt",
+    "section": "Fluid removal",
+    "variable": "Numeric value populated in actual removal records (%)",
+    "kind": "percent",
+    "definition": "100 × selected ACTUAL removal rows satisfying non-null value_as_number / denominator.",
+    "denominator": "All selected MEASUREMENT rows classified ACTUAL.",
+    "action": "Investigate missing values and validate removal semantics and magnitude.",
+    "zero_action": "The reported percentage rounds to 0.0%; a small nonzero numerator may remain. Check raw numerator and denominator before asserting no eligible items meet the condition. Investigate missing values and validate removal semantics and magnitude.",
+    "notes": "Conditional field presence only; clinical meaning and values are unvalidated. N/A means zero denominator in this SQL.",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/dialysis_rrt.sql",
+      "sql_sha256": "808155968766f8b5ef06893bfd7c7b4d525dd896a168337e413c07e2c1064b30",
+      "sql_locator": {
+        "line": 500,
+        "section": "Fluid removal",
+        "variable": "Numeric value populated in actual removal records (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "dialysis_rrt",
+    "section": "Fluid removal",
+    "variable": "Unit populated among numeric actual-removal records (%)",
+    "kind": "percent",
+    "definition": "100 × selected ACTUAL removal rows satisfying non-null value_as_number and a nonzero unit_concept_id or nonblank unit_source_value / denominator.",
+    "denominator": "Selected ACTUAL removal rows with non-null value_as_number.",
+    "action": "Resolve and harmonize units, distinguishing rate from volume, before summing removal.",
+    "zero_action": "The reported percentage rounds to 0.0%; a small nonzero numerator may remain. Check raw numerator and denominator before asserting no eligible items meet the condition. Resolve and harmonize units, distinguishing rate from volume, before summing removal.",
+    "notes": "Conditional field presence only; clinical meaning and values are unvalidated. N/A means zero denominator in this SQL.",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/dialysis_rrt.sql",
+      "sql_sha256": "808155968766f8b5ef06893bfd7c7b4d525dd896a168337e413c07e2c1064b30",
+      "sql_locator": {
+        "line": 513,
+        "section": "Fluid removal",
+        "variable": "Unit populated among numeric actual-removal records (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "dialysis_rrt",
+    "section": "Fluid removal",
+    "variable": "Actual-removal measurement_datetime populated (%)",
+    "kind": "percent",
+    "definition": "100 × selected ACTUAL removal rows satisfying non-null measurement_datetime / denominator.",
+    "denominator": "All selected MEASUREMENT rows classified ACTUAL.",
+    "action": "Verify measurement time versus treatment time and align to the intended removal interval.",
+    "zero_action": "The reported percentage rounds to 0.0%; a small nonzero numerator may remain. Check raw numerator and denominator before asserting no eligible items meet the condition. Verify measurement time versus treatment time and align to the intended removal interval.",
+    "notes": "Conditional field presence only; clinical meaning and values are unvalidated. N/A means zero denominator in this SQL. Missing datetime limits time-resolved use but is not by itself a CDM violation; inspect available date fields and source precision.",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/dialysis_rrt.sql",
+      "sql_sha256": "808155968766f8b5ef06893bfd7c7b4d525dd896a168337e413c07e2c1064b30",
+      "sql_locator": {
+        "line": 526,
+        "section": "Fluid removal",
+        "variable": "Actual-removal measurement_datetime populated (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "dialysis_rrt",
+    "section": "Fluid removal",
+    "variable": "Actual-removal visit_occurrence_id populated (%)",
+    "kind": "percent",
+    "definition": "100 × selected ACTUAL removal rows satisfying non-null visit_occurrence_id / denominator.",
+    "denominator": "All selected MEASUREMENT rows classified ACTUAL.",
+    "action": "Validate visit identity, patient match and event/visit date alignment, accounting for documented source-specific exceptions separately.",
+    "zero_action": "The reported percentage rounds to 0.0%; a small nonzero numerator may remain. Check raw numerator and denominator before asserting no eligible items meet the condition. Validate visit identity, patient match and temporal containment separately.",
+    "notes": "Conditional field presence only; clinical meaning and values are unvalidated. N/A means zero denominator in this SQL.",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/dialysis_rrt.sql",
+      "sql_sha256": "808155968766f8b5ef06893bfd7c7b4d525dd896a168337e413c07e2c1064b30",
+      "sql_locator": {
+        "line": 539,
+        "section": "Fluid removal",
+        "variable": "Actual-removal visit_occurrence_id populated (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement",
+        "https://ohdsi.github.io/DataQualityDashboard/articles/checks/isForeignKey.html",
+        "https://ohdsi.github.io/DataQualityDashboard/articles/checks/withinVisitDates.html"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "dialysis_rrt",
+    "section": "Reconstructability",
+    "variable": "RRT visits with actual fluid-removal measurements (%)",
+    "kind": "percent",
+    "definition": "100 × candidate RRT patient-visit pairs with an ACTUAL-classified removal measurement in the same pair / candidate RRT patient-visit pairs.",
+    "denominator": "Distinct (person_id, visit_occurrence_id) pairs from candidate RRT events with non-null visit ID.",
+    "action": "Check within-visit timing and session-specific linkage, numeric values and units before attributing removal to an RRT session.",
+    "zero_action": "The reported percentage rounds to 0.0%; a small nonzero numerator may remain. Check raw numerator and denominator before asserting no eligible items meet the condition. Check within-visit timing and session-specific linkage, numeric values and units before attributing removal to an RRT session.",
+    "notes": "Same-patient same-visit co-occurrence only; removal need not have numeric value or timestamp. Not temporal/session linkage or indication. N/A means no eligible RRT pairs.",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/dialysis_rrt.sql",
+      "sql_sha256": "808155968766f8b5ef06893bfd7c7b4d525dd896a168337e413c07e2c1064b30",
+      "sql_locator": {
+        "line": 559,
+        "section": "Reconstructability",
+        "variable": "RRT visits with actual fluid-removal measurements (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement",
+        "https://ohdsi.github.io/DataQualityDashboard/articles/checks/isForeignKey.html",
+        "https://ohdsi.github.io/DataQualityDashboard/articles/checks/withinVisitDates.html"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "dialysis_rrt",
+    "section": "Observed representation",
+    "variable": "Top RRT concepts",
+    "kind": "text",
+    "definition": "Top 15 source-table and concept-name groups among candidate RRT events, with record counts.",
+    "denominator": "",
+    "action": "Review candidate concepts and source meanings, separating treatment from context and actual from target removal; inspect rare concepts beyond the top list.",
+    "zero_action": "An empty or zero-valued inventory is not clinical absence. Review candidate concepts and source meanings, separating treatment from context and actual from target removal; inspect rare concepts beyond the top list.",
+    "notes": "Truncated inventory; NONE means no aggregated entries. RRT candidates use concept-name patterns in Procedure, Observation and Device; source-only representations may be missed. Not validated sessions, initiation, AKI or treatment indication.",
+    "evidence": {
+      "sql_path": "sql/historical/dialysis_rrt.sql",
+      "sql_sha256": "808155968766f8b5ef06893bfd7c7b4d525dd896a168337e413c07e2c1064b30",
+      "sql_locator": {
+        "line": 572,
+        "section": "Observed representation",
+        "variable": "Top RRT concepts"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "dialysis_rrt",
+    "section": "Observed representation",
+    "variable": "Top fluid-removal concepts",
+    "kind": "text",
+    "definition": "Top 15 removal-kind and concept-name groups among selected removal MEASUREMENT rows, with record counts.",
+    "denominator": "",
+    "action": "Review candidate concepts and source meanings, separating treatment from context and actual from target removal; inspect rare concepts beyond the top list.",
+    "zero_action": "An empty or zero-valued inventory is not clinical absence. Review candidate concepts and source meanings, separating treatment from context and actual from target removal; inspect rare concepts beyond the top list.",
+    "notes": "Truncated inventory; NONE means no aggregated entries. RRT candidates use concept-name patterns in Procedure, Observation and Device; source-only representations may be missed. Not validated sessions, initiation, AKI or treatment indication.",
+    "evidence": {
+      "sql_path": "sql/historical/dialysis_rrt.sql",
+      "sql_sha256": "808155968766f8b5ef06893bfd7c7b4d525dd896a168337e413c07e2c1064b30",
+      "sql_locator": {
+        "line": 579,
+        "section": "Observed representation",
+        "variable": "Top fluid-removal concepts"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement"
+      ],
+      "support_limit": "External sources establish schema/verification context, not this local candidate set, its sensitivity, specificity or fitness cutoff. SQL defines exact arithmetic.",
+      "recommendation_basis": "Analyst-proposed verification steps based on the measured metric and source-SQL limitations, not validated clinical remediation or a site-specific diagnosis.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  }
+]

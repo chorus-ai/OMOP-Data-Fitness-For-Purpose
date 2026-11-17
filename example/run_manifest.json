@@ -1,0 +1,63 @@
+{
+  "mode": "synthetic_demo",
+  "scope": "SYNTHETIC TEST ONLY. No clinical data, workbook import, or database query was used.",
+  "source_revision": "v0.4 synthetic cases with evidence-aware interpretation; not a site assessment",
+  "site": "Site_01",
+  "sites": [
+    "Site_01"
+  ],
+  "result_rows": 8,
+  "isolation": "Only the selected site's evidence and recommendations are included.",
+  "sources": [
+    {
+      "file": "sql/historical/code_status.sql",
+      "sheets": [
+        {
+          "sheet": "",
+          "rows_imported": 1
+        }
+      ]
+    },
+    {
+      "file": "sql/historical/continuous_infusions.sql",
+      "sheets": [
+        {
+          "sheet": "",
+          "rows_imported": 1
+        }
+      ]
+    },
+    {
+      "file": "sql/historical/fluid_balance.sql",
+      "sheets": [
+        {
+          "sheet": "",
+          "rows_imported": 1
+        }
+      ]
+    },
+    {
+      "file": "sql/historical/microbiology_ast.sql",
+      "sheets": [
+        {
+          "sheet": "",
+          "rows_imported": 4
+        }
+      ]
+    },
+    {
+      "file": "sql/transfusion_procedure_occurrence.sql",
+      "sheets": [
+        {
+          "sheet": "",
+          "rows_imported": 1
+        }
+      ]
+    }
+  ],
+  "run_id": "5b187761-5156-426b-8f32-bf0249b14324",
+  "created_utc": "2026-11-17T13:00:51.960238+00:00",
+  "pipeline_version": "0.4.0",
+  "interpretation": "Screening evidence only; no validated clinical phenotype or universal fitness score.",
+  "feedback_rule_version": "3.1.0"
+}

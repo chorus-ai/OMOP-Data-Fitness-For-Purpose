@@ -1,0 +1,1700 @@
+[
+  {
+    "query_id": "microbiology_ast",
+    "variable": "Microbiology - culture-related MEASUREMENT concepts (n)",
+    "kind": "count",
+    "definition": "Distinct measurement_concept_id values actually used in culture-related, non-AST candidate rows; not the count of concepts in the vocabulary.",
+    "denominator": "",
+    "action": "Review the observed standardized concepts and unmapped source representations.",
+    "zero_action": "Check candidate selection, source coverage and ETL mapping; a zero does not establish clinical absence.",
+    "notes": "MEASUREMENT rows whose measurement_concept_id matches the SQL concept-name candidate rules",
+    "section": "",
+    "evidence": {
+      "sql_path": "sql/historical/microbiology_ast.sql",
+      "sql_sha256": "fba267ffd250942336e4205bf7df3b60b2d97a7f992892e662f286c9064472a2",
+      "sql_locator": {
+        "output_label_lines": [
+          296
+        ],
+        "query_id": "microbiology_ast",
+        "section": "",
+        "variable": "Microbiology - culture-related MEASUREMENT concepts (n)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "microbiology_ast",
+    "variable": "Microbiology - antimicrobial susceptibility MEASUREMENT concepts (n)",
+    "kind": "count",
+    "definition": "Distinct measurement_concept_id values actually used in AST candidate rows.",
+    "denominator": "",
+    "action": "Confirm specimen/culture → organism → antimicrobial-susceptibility links at record level; same-visit co-occurrence is insufficient.",
+    "zero_action": "Check candidate selection, source coverage and ETL mapping; a zero does not establish clinical absence.",
+    "notes": "AST means antimicrobial susceptibility testing. MEASUREMENT rows whose measurement_concept_id matches the SQL concept-name candidate rules",
+    "section": "",
+    "evidence": {
+      "sql_path": "sql/historical/microbiology_ast.sql",
+      "sql_sha256": "fba267ffd250942336e4205bf7df3b60b2d97a7f992892e662f286c9064472a2",
+      "sql_locator": {
+        "output_label_lines": [
+          307
+        ],
+        "query_id": "microbiology_ast",
+        "section": "",
+        "variable": "Microbiology - antimicrobial susceptibility MEASUREMENT concepts (n)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "microbiology_ast",
+    "variable": "FACT_RELATIONSHIP is populated",
+    "kind": "flag",
+    "definition": "YES if any FACT_RELATIONSHIP row exists, for any domain; otherwise NO.",
+    "denominator": "",
+    "action": "Inspect microbiology-specific relationships separately; table presence alone gives no microbiology linkage evidence.",
+    "zero_action": "No qualifying FACT_RELATIONSHIP representation was detected. Check local linkage conventions, including measurement_event_id with meas_event_field_concept_id where applicable; absence of this representation does not mean absence of microbiology or all linkage.",
+    "notes": "Not a completeness or relationship-validity test.",
+    "section": "",
+    "evidence": {
+      "sql_path": "sql/historical/microbiology_ast.sql",
+      "sql_sha256": "fba267ffd250942336e4205bf7df3b60b2d97a7f992892e662f286c9064472a2",
+      "sql_locator": {
+        "output_label_lines": [
+          317
+        ],
+        "query_id": "microbiology_ast",
+        "section": "",
+        "variable": "FACT_RELATIONSHIP is populated"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#fact_relationship"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "microbiology_ast",
+    "variable": "Microbiology - FACT_RELATIONSHIP usage",
+    "kind": "flag",
+    "definition": "YES if either endpoint of any FACT_RELATIONSHIP references a Measurement-domain record with a candidate microbiology concept.",
+    "denominator": "",
+    "action": "Confirm specimen/culture → organism → antimicrobial-susceptibility links at record level; same-visit co-occurrence is insufficient.",
+    "zero_action": "No qualifying FACT_RELATIONSHIP representation was detected. Check local linkage conventions, including measurement_event_id with meas_event_field_concept_id where applicable; absence of this representation does not mean absence of microbiology or all linkage.",
+    "notes": "Does not validate the relationship type, other endpoint, patient consistency or full linkage chain.",
+    "section": "",
+    "evidence": {
+      "sql_path": "sql/historical/microbiology_ast.sql",
+      "sql_sha256": "fba267ffd250942336e4205bf7df3b60b2d97a7f992892e662f286c9064472a2",
+      "sql_locator": {
+        "output_label_lines": [
+          331
+        ],
+        "query_id": "microbiology_ast",
+        "section": "",
+        "variable": "Microbiology - FACT_RELATIONSHIP usage"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#fact_relationship"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "microbiology_ast",
+    "variable": "Microbiology - patients with blood-culture records (n)",
+    "kind": "count",
+    "definition": "Distinct person_id values among blood-culture candidate MEASUREMENT records.",
+    "denominator": "",
+    "action": "Verify the selected records and their source meaning before analytical reuse.",
+    "zero_action": "Check candidate selection, source coverage and ETL mapping; a zero does not establish clinical absence.",
+    "notes": "MEASUREMENT rows whose measurement_concept_id matches the SQL concept-name candidate rules",
+    "section": "",
+    "evidence": {
+      "sql_path": "sql/historical/microbiology_ast.sql",
+      "sql_sha256": "fba267ffd250942336e4205bf7df3b60b2d97a7f992892e662f286c9064472a2",
+      "sql_locator": {
+        "output_label_lines": [
+          345
+        ],
+        "query_id": "microbiology_ast",
+        "section": "",
+        "variable": "Microbiology - patients with blood-culture records (n)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "microbiology_ast",
+    "variable": "Microbiology - blood-culture records (n)",
+    "kind": "count",
+    "definition": "Number of blood-culture candidate MEASUREMENT rows, not distinct specimens or culture episodes.",
+    "denominator": "",
+    "action": "Verify the selected records and their source meaning before analytical reuse.",
+    "zero_action": "Check candidate selection, source coverage and ETL mapping; a zero does not establish clinical absence.",
+    "notes": "MEASUREMENT rows whose measurement_concept_id matches the SQL concept-name candidate rules",
+    "section": "",
+    "evidence": {
+      "sql_path": "sql/historical/microbiology_ast.sql",
+      "sql_sha256": "fba267ffd250942336e4205bf7df3b60b2d97a7f992892e662f286c9064472a2",
+      "sql_locator": {
+        "output_label_lines": [
+          355
+        ],
+        "query_id": "microbiology_ast",
+        "section": "",
+        "variable": "Microbiology - blood-culture records (n)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "microbiology_ast",
+    "variable": "Microbiology - positive blood-culture records (n)",
+    "kind": "count",
+    "definition": "Blood-culture rows whose combined value concept name and value_source_value match positive/detected/growth/isolat/present and none of the explicit negative exclusion patterns.",
+    "denominator": "",
+    "action": "Validate the lexical result classifier, language and specimen/episode deduplication before estimating positivity.",
+    "zero_action": "No selected blood-culture rows matched the positive-text rule. Check blood-culture denominator, result completeness, local language and unrecognized/negated result text before interpreting zero as no positive cultures.",
+    "notes": "Not clinically adjudicated positive cultures; unknown/unrecognized result text is not classified positive.",
+    "section": "",
+    "evidence": {
+      "sql_path": "sql/historical/microbiology_ast.sql",
+      "sql_sha256": "fba267ffd250942336e4205bf7df3b60b2d97a7f992892e662f286c9064472a2",
+      "sql_locator": {
+        "output_label_lines": [
+          365
+        ],
+        "query_id": "microbiology_ast",
+        "section": "",
+        "variable": "Microbiology - positive blood-culture records (n)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "microbiology_ast",
+    "variable": "Microbiology - positive blood cultures (%)",
+    "kind": "percent",
+    "definition": "100 × Blood-culture rows whose combined value concept name and value_source_value match positive/detected/growth/isolat/present and none of the explicit negative exclusion patterns / all blood-culture candidate rows.",
+    "denominator": "All blood-culture candidate MEASUREMENT rows, including missing or unrecognized results.",
+    "action": "Check result completeness and local-language classifier accuracy before reporting culture positivity.",
+    "zero_action": "Check result completeness and local-language classifier accuracy before reporting culture positivity. The percentage is rounded; inspect exact numerator/denominator before concluding none met the condition.",
+    "notes": "Not positivity among interpretable tests or unique specimens. SQL returns N/A when no blood-culture rows exist.",
+    "section": "",
+    "precision_decimals": 2,
+    "evidence": {
+      "sql_path": "sql/historical/microbiology_ast.sql",
+      "sql_sha256": "fba267ffd250942336e4205bf7df3b60b2d97a7f992892e662f286c9064472a2",
+      "sql_locator": {
+        "output_label_lines": [
+          375
+        ],
+        "query_id": "microbiology_ast",
+        "section": "",
+        "variable": "Microbiology - positive blood cultures (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "microbiology_ast",
+    "variable": "Microbiology - organism identification represented (Yes/No)",
+    "kind": "flag",
+    "definition": "YES if at least one organism-identification candidate MEASUREMENT row exists; otherwise NO.",
+    "denominator": "",
+    "action": "Confirm specimen/culture → organism → antimicrobial-susceptibility links at record level; same-visit co-occurrence is insufficient.",
+    "zero_action": "Check candidate selection, source coverage and ETL mapping; a zero does not establish clinical absence.",
+    "notes": "Presence only, not completeness or clinical absence.",
+    "section": "",
+    "evidence": {
+      "sql_path": "sql/historical/microbiology_ast.sql",
+      "sql_sha256": "fba267ffd250942336e4205bf7df3b60b2d97a7f992892e662f286c9064472a2",
+      "sql_locator": {
+        "output_label_lines": [
+          397
+        ],
+        "query_id": "microbiology_ast",
+        "section": "",
+        "variable": "Microbiology - organism identification represented (Yes/No)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "microbiology_ast",
+    "variable": "Microbiology - AST represented (Yes/No)",
+    "kind": "flag",
+    "definition": "YES if at least one AST candidate MEASUREMENT row exists; otherwise NO.",
+    "denominator": "",
+    "action": "Confirm specimen/culture → organism → antimicrobial-susceptibility links at record level; same-visit co-occurrence is insufficient.",
+    "zero_action": "Check candidate selection, source coverage and ETL mapping; a zero does not establish clinical absence.",
+    "notes": "Presence only, not completeness or clinical absence.",
+    "section": "",
+    "evidence": {
+      "sql_path": "sql/historical/microbiology_ast.sql",
+      "sql_sha256": "fba267ffd250942336e4205bf7df3b60b2d97a7f992892e662f286c9064472a2",
+      "sql_locator": {
+        "output_label_lines": [
+          411
+        ],
+        "query_id": "microbiology_ast",
+        "section": "",
+        "variable": "Microbiology - AST represented (Yes/No)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#measurement"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "continuous_infusions",
+    "variable": "DRUG_EXPOSURE records (n)",
+    "kind": "count",
+    "definition": "Count of selected DRUG_EXPOSURE rows.",
+    "denominator": "",
+    "action": "Verify the selected records and their source meaning before analytical reuse.",
+    "zero_action": "Check candidate selection, source coverage and ETL mapping; a zero does not establish clinical absence.",
+    "notes": "For each drug separately: DRUG_EXPOSURE rows matched by standardized ingredient or CONCEPT_ANCESTOR descendants for Norepinephrine or Propofol. Not unique infusion episodes or confirmed administrations.",
+    "section": "CORE",
+    "evidence": {
+      "sql_path": "sql/historical/continuous_infusions.sql",
+      "sql_sha256": "3084cbf252bc7ec79fefe86b908861545865ee3af1605ad9972fd6333e731cd9",
+      "sql_locator": {
+        "output_label_lines": [
+          769
+        ],
+        "query_id": "continuous_infusions",
+        "section": "CORE",
+        "variable": "DRUG_EXPOSURE records (n)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#drug_exposure",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#concept_ancestor"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "continuous_infusions",
+    "variable": "Patients with DRUG_EXPOSURE records (n)",
+    "kind": "count",
+    "definition": "Distinct person_id count among selected rows.",
+    "denominator": "",
+    "action": "Verify the selected records and their source meaning before analytical reuse.",
+    "zero_action": "Check candidate selection, source coverage and ETL mapping; a zero does not establish clinical absence.",
+    "notes": "For each drug separately: DRUG_EXPOSURE rows matched by standardized ingredient or CONCEPT_ANCESTOR descendants for Norepinephrine or Propofol.",
+    "section": "CORE",
+    "evidence": {
+      "sql_path": "sql/historical/continuous_infusions.sql",
+      "sql_sha256": "3084cbf252bc7ec79fefe86b908861545865ee3af1605ad9972fd6333e731cd9",
+      "sql_locator": {
+        "output_label_lines": [
+          776
+        ],
+        "query_id": "continuous_infusions",
+        "section": "CORE",
+        "variable": "Patients with DRUG_EXPOSURE records (n)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#drug_exposure",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#concept_ancestor"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "continuous_infusions",
+    "variable": "Drug exposure type concepts observed",
+    "kind": "text",
+    "definition": "Observed drug_type_concept_id/name categories with their row counts.",
+    "denominator": "",
+    "action": "Separate orders, prescriptions and administration records using local provenance; do not assume all rows are administrations.",
+    "zero_action": "Check candidate selection, source coverage and ETL mapping; a zero does not establish clinical absence.",
+    "notes": "For each drug separately: DRUG_EXPOSURE rows matched by standardized ingredient or CONCEPT_ANCESTOR descendants for Norepinephrine or Propofol.",
+    "section": "CORE",
+    "evidence": {
+      "sql_path": "sql/historical/continuous_infusions.sql",
+      "sql_sha256": "3084cbf252bc7ec79fefe86b908861545865ee3af1605ad9972fd6333e731cd9",
+      "sql_locator": {
+        "output_label_lines": [
+          783
+        ],
+        "query_id": "continuous_infusions",
+        "section": "CORE",
+        "variable": "Drug exposure type concepts observed"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#drug_exposure",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#concept_ancestor"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "continuous_infusions",
+    "variable": "Start and end datetime both populated (%)",
+    "kind": "percent",
+    "definition": "100 × rows with both start and end datetime non-null / selected rows.",
+    "denominator": "All selected DRUG_EXPOSURE rows for the current drug.",
+    "action": "Inspect missing endpoints and source timing semantics before constructing intervals.",
+    "zero_action": "Inspect missing endpoints and source timing semantics before constructing intervals. The percentage is rounded; inspect exact numerator/denominator before concluding none met the condition.",
+    "notes": "For each drug separately: DRUG_EXPOSURE rows matched by standardized ingredient or CONCEPT_ANCESTOR descendants for Norepinephrine or Propofol.",
+    "section": "CORE",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/continuous_infusions.sql",
+      "sql_sha256": "3084cbf252bc7ec79fefe86b908861545865ee3af1605ad9972fd6333e731cd9",
+      "sql_locator": {
+        "output_label_lines": [
+          790
+        ],
+        "query_id": "continuous_infusions",
+        "section": "CORE",
+        "variable": "Start and end datetime both populated (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#drug_exposure",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#concept_ancestor"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "continuous_infusions",
+    "variable": "Chronologically valid intervals among complete intervals (%)",
+    "kind": "percent",
+    "definition": "100 × complete rows with end datetime ≥ start datetime / complete rows.",
+    "denominator": "Selected rows for the current drug with both start and end datetime non-null.",
+    "action": "Review end-before-start records and ETL; separately check completeness and zero-duration semantics.",
+    "zero_action": "Review end-before-start records and ETL; separately check completeness and zero-duration semantics. The percentage is rounded; inspect exact numerator/denominator before concluding none met the condition.",
+    "notes": "For each drug separately: DRUG_EXPOSURE rows matched by standardized ingredient or CONCEPT_ANCESTOR descendants for Norepinephrine or Propofol. Equality is counted as chronologically valid, not proof of clinical interval validity.",
+    "section": "CORE",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/continuous_infusions.sql",
+      "sql_sha256": "3084cbf252bc7ec79fefe86b908861545865ee3af1605ad9972fd6333e731cd9",
+      "sql_locator": {
+        "output_label_lines": [
+          797
+        ],
+        "query_id": "continuous_infusions",
+        "section": "CORE",
+        "variable": "Chronologically valid intervals among complete intervals (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#drug_exposure",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#concept_ancestor"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "continuous_infusions",
+    "variable": "Zero-duration intervals among complete intervals (%)",
+    "kind": "percent",
+    "definition": "100 × complete rows with identical start/end datetime / complete rows.",
+    "denominator": "Selected rows for the current drug with both start and end datetime non-null.",
+    "action": "Check whether rows encode rate-change point events or order versions before deriving durations; do not automatically delete equal timestamps.",
+    "zero_action": "Check whether rows encode rate-change point events or order versions before deriving durations; do not automatically delete equal timestamps. The percentage is rounded; inspect exact numerator/denominator before concluding none met the condition.",
+    "notes": "For each drug separately: DRUG_EXPOSURE rows matched by standardized ingredient or CONCEPT_ANCESTOR descendants for Norepinephrine or Propofol.",
+    "section": "CORE",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/continuous_infusions.sql",
+      "sql_sha256": "3084cbf252bc7ec79fefe86b908861545865ee3af1605ad9972fd6333e731cd9",
+      "sql_locator": {
+        "output_label_lines": [
+          804
+        ],
+        "query_id": "continuous_infusions",
+        "section": "CORE",
+        "variable": "Zero-duration intervals among complete intervals (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#drug_exposure",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#concept_ancestor"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "continuous_infusions",
+    "variable": "Median positive record duration (minutes)",
+    "kind": "distribution",
+    "definition": "Median of (end − start) in minutes among rows with both datetimes and end > start, rounded to one decimal.",
+    "denominator": "",
+    "action": "Check whether record durations describe orders, administrations or rate segments before interpreting.",
+    "zero_action": "A displayed zero may reflect a positive median below 0.05 minutes rounded to one decimal. Inspect unrounded durations and source record semantics.",
+    "notes": "For each drug separately: DRUG_EXPOSURE rows matched by standardized ingredient or CONCEPT_ANCESTOR descendants for Norepinephrine or Propofol. Excludes zero/negative/incomplete intervals; not median infusion-episode duration.",
+    "section": "CORE",
+    "evidence": {
+      "sql_path": "sql/historical/continuous_infusions.sql",
+      "sql_sha256": "3084cbf252bc7ec79fefe86b908861545865ee3af1605ad9972fd6333e731cd9",
+      "sql_locator": {
+        "output_label_lines": [
+          811
+        ],
+        "query_id": "continuous_infusions",
+        "section": "CORE",
+        "variable": "Median positive record duration (minutes)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#drug_exposure",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#concept_ancestor"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "continuous_infusions",
+    "variable": "Adjacent intervals contiguous within ±1 minute (%)",
+    "kind": "percent",
+    "definition": "100 × adjacent pairs with absolute(current end − next start) ≤60 seconds / evaluated pairs.",
+    "denominator": "Adjacent pairs among complete end≥start rows with non-null visit_occurrence_id, ordered by start datetime and drug_exposure_id within drug/person/visit.",
+    "action": "Inspect whether consecutive records form meaningful rate segments; contiguity is not an OMOP requirement.",
+    "zero_action": "Inspect whether consecutive records form meaningful rate segments; contiguity is not an OMOP requirement. The percentage is rounded; inspect exact numerator/denominator before concluding none met the condition.",
+    "notes": "For each drug separately: DRUG_EXPOSURE rows matched by standardized ingredient or CONCEPT_ANCESTOR descendants for Norepinephrine or Propofol. Can overlap with overlapping-pair percentage; these percentages must not be summed.",
+    "section": "CORE",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/continuous_infusions.sql",
+      "sql_sha256": "3084cbf252bc7ec79fefe86b908861545865ee3af1605ad9972fd6333e731cd9",
+      "sql_locator": {
+        "output_label_lines": [
+          818
+        ],
+        "query_id": "continuous_infusions",
+        "section": "CORE",
+        "variable": "Adjacent intervals contiguous within ±1 minute (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#drug_exposure",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#concept_ancestor"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "continuous_infusions",
+    "variable": "Adjacent intervals overlapping (%)",
+    "kind": "percent",
+    "definition": "100 × evaluated pairs with next start < current end / evaluated pairs.",
+    "denominator": "Adjacent pairs among complete end≥start rows with non-null visit_occurrence_id, ordered by start datetime and drug_exposure_id within drug/person/visit.",
+    "action": "Inspect parallel infusions, rate-change point events and order versions before merging intervals.",
+    "zero_action": "Inspect parallel infusions, rate-change point events and order versions before merging intervals. The percentage is rounded; inspect exact numerator/denominator before concluding none met the condition.",
+    "notes": "For each drug separately: DRUG_EXPOSURE rows matched by standardized ingredient or CONCEPT_ANCESTOR descendants for Norepinephrine or Propofol. Only adjacent starts, not all overlapping pairs; no automatic error classification.",
+    "section": "CORE",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/continuous_infusions.sql",
+      "sql_sha256": "3084cbf252bc7ec79fefe86b908861545865ee3af1605ad9972fd6333e731cd9",
+      "sql_locator": {
+        "output_label_lines": [
+          825
+        ],
+        "query_id": "continuous_infusions",
+        "section": "CORE",
+        "variable": "Adjacent intervals overlapping (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#drug_exposure",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#concept_ancestor"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "continuous_infusions",
+    "variable": "dose_unit_source_value populated (%)",
+    "kind": "percent",
+    "definition": "100 × rows with non-null, nonblank trimmed dose_unit_source_value / selected rows.",
+    "denominator": "All selected DRUG_EXPOSURE rows for the current drug.",
+    "action": "Review missing units and unit semantics; a populated field need not encode a rate.",
+    "zero_action": "Review missing units and unit semantics; a populated field need not encode a rate. The percentage is rounded; inspect exact numerator/denominator before concluding none met the condition.",
+    "notes": "For each drug separately: DRUG_EXPOSURE rows matched by standardized ingredient or CONCEPT_ANCESTOR descendants for Norepinephrine or Propofol.",
+    "section": "CORE",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/continuous_infusions.sql",
+      "sql_sha256": "3084cbf252bc7ec79fefe86b908861545865ee3af1605ad9972fd6333e731cd9",
+      "sql_locator": {
+        "output_label_lines": [
+          832
+        ],
+        "query_id": "continuous_infusions",
+        "section": "CORE",
+        "variable": "dose_unit_source_value populated (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#drug_exposure",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#concept_ancestor"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "continuous_infusions",
+    "variable": "Dose unit source values observed",
+    "kind": "text",
+    "definition": "Trimmed nonblank dose_unit_source_value strings and row counts, ordered by frequency.",
+    "denominator": "",
+    "action": "Verify unit spelling, conversion and source quantity semantics; retain original unit values.",
+    "zero_action": "Check candidate selection, source coverage and ETL mapping; a zero does not establish clinical absence.",
+    "notes": "For each drug separately: DRUG_EXPOSURE rows matched by standardized ingredient or CONCEPT_ANCESTOR descendants for Norepinephrine or Propofol.",
+    "section": "CORE",
+    "evidence": {
+      "sql_path": "sql/historical/continuous_infusions.sql",
+      "sql_sha256": "3084cbf252bc7ec79fefe86b908861545865ee3af1605ad9972fd6333e731cd9",
+      "sql_locator": {
+        "output_label_lines": [
+          839
+        ],
+        "query_id": "continuous_infusions",
+        "section": "CORE",
+        "variable": "Dose unit source values observed"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#drug_exposure",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#concept_ancestor"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "continuous_infusions",
+    "variable": "quantity populated (%)",
+    "kind": "percent",
+    "definition": "100 × rows with quantity IS NOT NULL / selected rows.",
+    "denominator": "All selected DRUG_EXPOSURE rows for the current drug.",
+    "action": "Determine what quantity measures locally; non-null includes zero or negative values and is not validated dose-rate availability.",
+    "zero_action": "Determine what quantity measures locally; non-null includes zero or negative values and is not validated dose-rate availability. The percentage is rounded; inspect exact numerator/denominator before concluding none met the condition.",
+    "notes": "For each drug separately: DRUG_EXPOSURE rows matched by standardized ingredient or CONCEPT_ANCESTOR descendants for Norepinephrine or Propofol.",
+    "section": "CORE",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/continuous_infusions.sql",
+      "sql_sha256": "3084cbf252bc7ec79fefe86b908861545865ee3af1605ad9972fd6333e731cd9",
+      "sql_locator": {
+        "output_label_lines": [
+          846
+        ],
+        "query_id": "continuous_infusions",
+        "section": "CORE",
+        "variable": "quantity populated (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#drug_exposure",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#concept_ancestor"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "continuous_infusions",
+    "variable": "Candidate numeric rate: quantity + rate-like unit (%)",
+    "kind": "percent",
+    "definition": "100 × rows with non-null quantity and a regex-matched mass/time dose unit / selected rows.",
+    "denominator": "All selected DRUG_EXPOSURE rows for the current drug.",
+    "action": "Validate quantity meaning, units, concentration/weight assumptions and timing before deriving an administered rate.",
+    "zero_action": "Validate quantity meaning, units, concentration/weight assumptions and timing before deriving an administered rate. The percentage is rounded; inspect exact numerator/denominator before concluding none met the condition.",
+    "notes": "For each drug separately: DRUG_EXPOSURE rows matched by standardized ingredient or CONCEPT_ANCESTOR descendants for Norepinephrine or Propofol. Candidate availability only; quantity positivity, dose plausibility and administration are not checked.",
+    "section": "CORE",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/continuous_infusions.sql",
+      "sql_sha256": "3084cbf252bc7ec79fefe86b908861545865ee3af1605ad9972fd6333e731cd9",
+      "sql_locator": {
+        "output_label_lines": [
+          853
+        ],
+        "query_id": "continuous_infusions",
+        "section": "CORE",
+        "variable": "Candidate numeric rate: quantity + rate-like unit (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#drug_exposure",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#concept_ancestor"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "continuous_infusions",
+    "variable": "Standardized route populated (%)",
+    "kind": "percent",
+    "definition": "100 × rows with route_concept_id non-null and not 0 / selected rows.",
+    "denominator": "All selected DRUG_EXPOSURE rows for the current drug.",
+    "action": "Validate route concepts and mapping, not just field presence.",
+    "zero_action": "Validate route concepts and mapping, not just field presence. The percentage is rounded; inspect exact numerator/denominator before concluding none met the condition.",
+    "notes": "For each drug separately: DRUG_EXPOSURE rows matched by standardized ingredient or CONCEPT_ANCESTOR descendants for Norepinephrine or Propofol.",
+    "section": "CORE",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/continuous_infusions.sql",
+      "sql_sha256": "3084cbf252bc7ec79fefe86b908861545865ee3af1605ad9972fd6333e731cd9",
+      "sql_locator": {
+        "output_label_lines": [
+          860
+        ],
+        "query_id": "continuous_infusions",
+        "section": "CORE",
+        "variable": "Standardized route populated (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#drug_exposure",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#concept_ancestor"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "continuous_infusions",
+    "variable": "Source indicates IV but standardized route is not IV (%)",
+    "kind": "percent",
+    "definition": "100 × source-IV rows with missing/zero route_concept_id or standardized route name lacking intravenous / source-IV rows.",
+    "denominator": "Selected rows whose route_source_value matches the SQL IV/intravenous token regex.",
+    "action": "Inspect affected source-to-standard route mappings; lexical mismatch does not establish incorrect administration.",
+    "zero_action": "Inspect affected source-to-standard route mappings; lexical mismatch does not establish incorrect administration. The percentage is rounded; inspect exact numerator/denominator before concluding none met the condition.",
+    "notes": "For each drug separately: DRUG_EXPOSURE rows matched by standardized ingredient or CONCEPT_ANCESTOR descendants for Norepinephrine or Propofol. IV means intravenous. Includes missing standardized routes, not just conflicting non-IV routes.",
+    "section": "CORE",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/continuous_infusions.sql",
+      "sql_sha256": "3084cbf252bc7ec79fefe86b908861545865ee3af1605ad9972fd6333e731cd9",
+      "sql_locator": {
+        "output_label_lines": [
+          867
+        ],
+        "query_id": "continuous_infusions",
+        "section": "CORE",
+        "variable": "Source indicates IV but standardized route is not IV (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#drug_exposure",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#concept_ancestor"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "continuous_infusions",
+    "variable": "visit_detail_id populated (%)",
+    "kind": "percent",
+    "definition": "100 × rows with visit_detail_id IS NOT NULL / selected rows.",
+    "denominator": "All selected DRUG_EXPOSURE rows for the current drug.",
+    "action": "Check referenced visit existence, patient consistency and temporal overlap separately; non-null alone is not valid linkage.",
+    "zero_action": "Check referenced visit existence, patient consistency and temporal overlap separately; non-null alone is not valid linkage. The percentage is rounded; inspect exact numerator/denominator before concluding none met the condition.",
+    "notes": "For each drug separately: DRUG_EXPOSURE rows matched by standardized ingredient or CONCEPT_ANCESTOR descendants for Norepinephrine or Propofol.",
+    "section": "CORE",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/continuous_infusions.sql",
+      "sql_sha256": "3084cbf252bc7ec79fefe86b908861545865ee3af1605ad9972fd6333e731cd9",
+      "sql_locator": {
+        "output_label_lines": [
+          874
+        ],
+        "query_id": "continuous_infusions",
+        "section": "CORE",
+        "variable": "visit_detail_id populated (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#drug_exposure",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#concept_ancestor",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#visit_occurrence",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#visit_detail"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "continuous_infusions",
+    "variable": "visit_occurrence_id populated (%)",
+    "kind": "percent",
+    "definition": "100 × rows with visit_occurrence_id IS NOT NULL / selected rows.",
+    "denominator": "All selected DRUG_EXPOSURE rows for the current drug.",
+    "action": "Check referenced visit existence, patient consistency and temporal overlap separately; non-null alone is not valid linkage.",
+    "zero_action": "Check referenced visit existence, patient consistency and temporal overlap separately; non-null alone is not valid linkage. The percentage is rounded; inspect exact numerator/denominator before concluding none met the condition.",
+    "notes": "For each drug separately: DRUG_EXPOSURE rows matched by standardized ingredient or CONCEPT_ANCESTOR descendants for Norepinephrine or Propofol.",
+    "section": "DIAGNOSTIC",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/continuous_infusions.sql",
+      "sql_sha256": "3084cbf252bc7ec79fefe86b908861545865ee3af1605ad9972fd6333e731cd9",
+      "sql_locator": {
+        "output_label_lines": [
+          922
+        ],
+        "query_id": "continuous_infusions",
+        "section": "DIAGNOSTIC",
+        "variable": "visit_occurrence_id populated (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#drug_exposure",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#concept_ancestor",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#visit_occurrence",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#visit_detail"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "continuous_infusions",
+    "variable": "Distinct standardized drug_concept_ids used (n)",
+    "kind": "count",
+    "definition": "Distinct drug_concept_id values observed among selected rows.",
+    "denominator": "",
+    "action": "Review product/ingredient representation and vocabulary version; this is not the number of drugs administered.",
+    "zero_action": "Check candidate selection, source coverage and ETL mapping; a zero does not establish clinical absence.",
+    "notes": "For each drug separately: DRUG_EXPOSURE rows matched by standardized ingredient or CONCEPT_ANCESTOR descendants for Norepinephrine or Propofol.",
+    "section": "DIAGNOSTIC",
+    "evidence": {
+      "sql_path": "sql/historical/continuous_infusions.sql",
+      "sql_sha256": "3084cbf252bc7ec79fefe86b908861545865ee3af1605ad9972fd6333e731cd9",
+      "sql_locator": {
+        "output_label_lines": [
+          884
+        ],
+        "query_id": "continuous_infusions",
+        "section": "DIAGNOSTIC",
+        "variable": "Distinct standardized drug_concept_ids used (n)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#drug_exposure",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#concept_ancestor"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "continuous_infusions",
+    "variable": "Median DRUG_EXPOSURE records per patient",
+    "kind": "distribution",
+    "definition": "Median of per-person selected row counts for the current drug, rounded to one decimal.",
+    "denominator": "",
+    "action": "Assess ETL record grain, duplicates and order/version structure; do not interpret as episode count.",
+    "zero_action": "Check candidate selection, source coverage and ETL mapping; a zero does not establish clinical absence.",
+    "notes": "For each drug separately: DRUG_EXPOSURE rows matched by standardized ingredient or CONCEPT_ANCESTOR descendants for Norepinephrine or Propofol.",
+    "section": "DIAGNOSTIC",
+    "evidence": {
+      "sql_path": "sql/historical/continuous_infusions.sql",
+      "sql_sha256": "3084cbf252bc7ec79fefe86b908861545865ee3af1605ad9972fd6333e731cd9",
+      "sql_locator": {
+        "output_label_lines": [
+          891
+        ],
+        "query_id": "continuous_infusions",
+        "section": "DIAGNOSTIC",
+        "variable": "Median DRUG_EXPOSURE records per patient"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#drug_exposure",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#concept_ancestor"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "continuous_infusions",
+    "variable": "Dose-rate-like units among populated dose units (%)",
+    "kind": "percent",
+    "definition": "100 × rows matching the normalized mass/time unit regex / rows with non-null, nonblank dose units.",
+    "denominator": "Selected rows with non-null and nonblank trimmed dose_unit_source_value.",
+    "action": "Inspect unmatched unit strings and validate quantity semantics; this fraction is not overall unit completeness.",
+    "zero_action": "Inspect unmatched unit strings and validate quantity semantics; this fraction is not overall unit completeness. The percentage is rounded; inspect exact numerator/denominator before concluding none met the condition.",
+    "notes": "For each drug separately: DRUG_EXPOSURE rows matched by standardized ingredient or CONCEPT_ANCESTOR descendants for Norepinephrine or Propofol. Regex allows mcg/ug/ng/mg/g per min/hour, optionally per kg; volume/time units may be missed.",
+    "section": "DIAGNOSTIC",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/continuous_infusions.sql",
+      "sql_sha256": "3084cbf252bc7ec79fefe86b908861545865ee3af1605ad9972fd6333e731cd9",
+      "sql_locator": {
+        "output_label_lines": [
+          901
+        ],
+        "query_id": "continuous_infusions",
+        "section": "DIAGNOSTIC",
+        "variable": "Dose-rate-like units among populated dose units (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#drug_exposure",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#concept_ancestor"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "continuous_infusions",
+    "variable": "route_source_value populated (%)",
+    "kind": "percent",
+    "definition": "100 × rows with non-null, nonblank trimmed route_source_value / selected rows.",
+    "denominator": "All selected DRUG_EXPOSURE rows for the current drug.",
+    "action": "Inspect missing route values and validate source-to-standard mappings separately.",
+    "zero_action": "Inspect missing route values and validate source-to-standard mappings separately. The percentage is rounded; inspect exact numerator/denominator before concluding none met the condition.",
+    "notes": "For each drug separately: DRUG_EXPOSURE rows matched by standardized ingredient or CONCEPT_ANCESTOR descendants for Norepinephrine or Propofol.",
+    "section": "DIAGNOSTIC",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/continuous_infusions.sql",
+      "sql_sha256": "3084cbf252bc7ec79fefe86b908861545865ee3af1605ad9972fd6333e731cd9",
+      "sql_locator": {
+        "output_label_lines": [
+          908
+        ],
+        "query_id": "continuous_infusions",
+        "section": "DIAGNOSTIC",
+        "variable": "route_source_value populated (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#drug_exposure",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#concept_ancestor"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "continuous_infusions",
+    "variable": "Observed source → standardized route mappings",
+    "kind": "text",
+    "definition": "Source route string to standardized route concept/name pairs with row counts.",
+    "denominator": "",
+    "action": "Review frequent and unmapped routes against source documentation; frequency alone is not mapping accuracy.",
+    "zero_action": "Check candidate selection, source coverage and ETL mapping; a zero does not establish clinical absence.",
+    "notes": "For each drug separately: DRUG_EXPOSURE rows matched by standardized ingredient or CONCEPT_ANCESTOR descendants for Norepinephrine or Propofol.",
+    "section": "DIAGNOSTIC",
+    "evidence": {
+      "sql_path": "sql/historical/continuous_infusions.sql",
+      "sql_sha256": "3084cbf252bc7ec79fefe86b908861545865ee3af1605ad9972fd6333e731cd9",
+      "sql_locator": {
+        "output_label_lines": [
+          915
+        ],
+        "query_id": "continuous_infusions",
+        "section": "DIAGNOSTIC",
+        "variable": "Observed source → standardized route mappings"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#drug_exposure",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#concept_ancestor"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "continuous_infusions",
+    "variable": "Consecutive interval pairs evaluated (n)",
+    "kind": "count",
+    "definition": "Number of selected valid intervals having a next interval within the same drug/person/visit ordered sequence.",
+    "denominator": "",
+    "action": "Use this denominator for adjacent-pair diagnostics only, not for all records or all possible interval pairs.",
+    "zero_action": "No eligible consecutive pairs were formed. Check record counts, visit linkage and complete nonnegative intervals; a single record per drug/person/visit yields zero pairs despite observed drug exposure.",
+    "notes": "For each drug separately: DRUG_EXPOSURE rows matched by standardized ingredient or CONCEPT_ANCESTOR descendants for Norepinephrine or Propofol. Excludes incomplete/end-before-start intervals and records without visit_occurrence_id.",
+    "section": "DIAGNOSTIC",
+    "evidence": {
+      "sql_path": "sql/historical/continuous_infusions.sql",
+      "sql_sha256": "3084cbf252bc7ec79fefe86b908861545865ee3af1605ad9972fd6333e731cd9",
+      "sql_locator": {
+        "output_label_lines": [
+          929
+        ],
+        "query_id": "continuous_infusions",
+        "section": "DIAGNOSTIC",
+        "variable": "Consecutive interval pairs evaluated (n)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#drug_exposure",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#concept_ancestor"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "mechanical_ventilation",
+    "variable": "PROCEDURE_OCCURRENCE records (n)",
+    "kind": "count",
+    "definition": "Count of rows among mechanical-ventilation candidates in PROCEDURE_OCCURRENCE.",
+    "denominator": "",
+    "action": "Review candidate specificity and source semantics; assess true duplicates and event linkage before defining episodes, without automatically removing repeated records.",
+    "zero_action": "Check candidate selection, source coverage and ETL mapping; a zero does not establish clinical absence.",
+    "notes": "Candidates use fixed seed IDs and/or concept-name regex; no descendant expansion. Standard concept field only; source-only evidence may be missed. Counts are records, not ventilation episodes.",
+    "section": "Mechanical ventilation",
+    "evidence": {
+      "sql_path": "sql/historical/mechanical_ventilation.sql",
+      "sql_sha256": "31efce0b936593b22bf7117da303c5e82c56cbe92b90ea3ef6e8176a186d88aa",
+      "sql_locator": {
+        "output_label_lines": [
+          426
+        ],
+        "query_id": "mechanical_ventilation",
+        "section": "Mechanical ventilation",
+        "variable": "PROCEDURE_OCCURRENCE records (n)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#procedure_occurrence",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#observation",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#device_exposure"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "mechanical_ventilation",
+    "variable": "PROCEDURE_OCCURRENCE patients (n)",
+    "kind": "count",
+    "definition": "Count of distinct person_id values among mechanical-ventilation candidates in PROCEDURE_OCCURRENCE.",
+    "denominator": "",
+    "action": "Review candidate specificity and source semantics; assess true duplicates and event linkage before defining episodes, without automatically removing repeated records.",
+    "zero_action": "Check candidate selection, source coverage and ETL mapping; a zero does not establish clinical absence.",
+    "notes": "Candidates use fixed seed IDs and/or concept-name regex; no descendant expansion. Standard concept field only; source-only evidence may be missed. This metric counts distinct persons, not records or ventilation episodes.",
+    "section": "Mechanical ventilation",
+    "evidence": {
+      "sql_path": "sql/historical/mechanical_ventilation.sql",
+      "sql_sha256": "31efce0b936593b22bf7117da303c5e82c56cbe92b90ea3ef6e8176a186d88aa",
+      "sql_locator": {
+        "output_label_lines": [
+          436
+        ],
+        "query_id": "mechanical_ventilation",
+        "section": "Mechanical ventilation",
+        "variable": "PROCEDURE_OCCURRENCE patients (n)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#procedure_occurrence",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#observation",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#device_exposure"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "mechanical_ventilation",
+    "variable": "Tracheal intubation records (n)",
+    "kind": "count",
+    "definition": "Count of rows among tracheal-intubation candidates in PROCEDURE_OCCURRENCE.",
+    "denominator": "",
+    "action": "Review candidate specificity and source semantics; assess true duplicates and event linkage before defining episodes, without automatically removing repeated records.",
+    "zero_action": "Check candidate selection, source coverage and ETL mapping; a zero does not establish clinical absence.",
+    "notes": "Candidates use fixed seed IDs and/or concept-name regex; no descendant expansion. Standard concept field only; source-only evidence may be missed. Counts are records, not ventilation episodes.",
+    "section": "Airway",
+    "evidence": {
+      "sql_path": "sql/historical/mechanical_ventilation.sql",
+      "sql_sha256": "31efce0b936593b22bf7117da303c5e82c56cbe92b90ea3ef6e8176a186d88aa",
+      "sql_locator": {
+        "output_label_lines": [
+          508
+        ],
+        "query_id": "mechanical_ventilation",
+        "section": "Airway",
+        "variable": "Tracheal intubation records (n)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#procedure_occurrence",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#observation",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#device_exposure"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "mechanical_ventilation",
+    "variable": "Patients with tracheal intubation (n)",
+    "kind": "count",
+    "definition": "Count of distinct person_id values among tracheal-intubation candidates in PROCEDURE_OCCURRENCE.",
+    "denominator": "",
+    "action": "Review candidate specificity and source semantics; assess true duplicates and event linkage before defining episodes, without automatically removing repeated records.",
+    "zero_action": "Check candidate selection, source coverage and ETL mapping; a zero does not establish clinical absence.",
+    "notes": "Candidates use fixed seed IDs and/or concept-name regex; no descendant expansion. Standard concept field only; source-only evidence may be missed. This metric counts distinct persons, not records or ventilation episodes.",
+    "section": "Airway",
+    "evidence": {
+      "sql_path": "sql/historical/mechanical_ventilation.sql",
+      "sql_sha256": "31efce0b936593b22bf7117da303c5e82c56cbe92b90ea3ef6e8176a186d88aa",
+      "sql_locator": {
+        "output_label_lines": [
+          518
+        ],
+        "query_id": "mechanical_ventilation",
+        "section": "Airway",
+        "variable": "Patients with tracheal intubation (n)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#procedure_occurrence",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#observation",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#device_exposure"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "mechanical_ventilation",
+    "variable": "Extubation candidate records (n)",
+    "kind": "count",
+    "definition": "Count of rows among extubation candidates in PROCEDURE_OCCURRENCE.",
+    "denominator": "",
+    "action": "Review candidate specificity and source semantics; assess true duplicates and event linkage before defining episodes, without automatically removing repeated records.",
+    "zero_action": "Check candidate selection, source coverage and ETL mapping; a zero does not establish clinical absence.",
+    "notes": "Candidates use fixed seed IDs and/or concept-name regex; no descendant expansion. Standard concept field only; source-only evidence may be missed. Counts are records, not ventilation episodes.",
+    "section": "Airway",
+    "evidence": {
+      "sql_path": "sql/historical/mechanical_ventilation.sql",
+      "sql_sha256": "31efce0b936593b22bf7117da303c5e82c56cbe92b90ea3ef6e8176a186d88aa",
+      "sql_locator": {
+        "output_label_lines": [
+          548
+        ],
+        "query_id": "mechanical_ventilation",
+        "section": "Airway",
+        "variable": "Extubation candidate records (n)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#procedure_occurrence",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#observation",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#device_exposure"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "mechanical_ventilation",
+    "variable": "Mechanical-ventilation records (n)",
+    "kind": "count",
+    "definition": "Count of rows among mechanical-ventilation candidates in OBSERVATION.",
+    "denominator": "",
+    "action": "Review candidate specificity and source semantics; assess true duplicates and event linkage before defining episodes, without automatically removing repeated records.",
+    "zero_action": "Check candidate selection, source coverage and ETL mapping; a zero does not establish clinical absence.",
+    "notes": "Candidates use fixed seed IDs and/or concept-name regex; no descendant expansion. Standard concept field only; source-only evidence may be missed. Counts are records, not ventilation episodes.",
+    "section": "OBSERVATION",
+    "evidence": {
+      "sql_path": "sql/historical/mechanical_ventilation.sql",
+      "sql_sha256": "31efce0b936593b22bf7117da303c5e82c56cbe92b90ea3ef6e8176a186d88aa",
+      "sql_locator": {
+        "output_label_lines": [
+          560
+        ],
+        "query_id": "mechanical_ventilation",
+        "section": "OBSERVATION",
+        "variable": "Mechanical-ventilation records (n)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#procedure_occurrence",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#observation",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#device_exposure"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "mechanical_ventilation",
+    "variable": "Mechanical-ventilation patients (n)",
+    "kind": "count",
+    "definition": "Count of distinct person_id values among mechanical-ventilation candidates in OBSERVATION.",
+    "denominator": "",
+    "action": "Review candidate specificity and source semantics; assess true duplicates and event linkage before defining episodes, without automatically removing repeated records.",
+    "zero_action": "Check candidate selection, source coverage and ETL mapping; a zero does not establish clinical absence.",
+    "notes": "Candidates use fixed seed IDs and/or concept-name regex; no descendant expansion. Standard concept field only; source-only evidence may be missed. This metric counts distinct persons, not records or ventilation episodes.",
+    "section": "OBSERVATION",
+    "evidence": {
+      "sql_path": "sql/historical/mechanical_ventilation.sql",
+      "sql_sha256": "31efce0b936593b22bf7117da303c5e82c56cbe92b90ea3ef6e8176a186d88aa",
+      "sql_locator": {
+        "output_label_lines": [
+          570
+        ],
+        "query_id": "mechanical_ventilation",
+        "section": "OBSERVATION",
+        "variable": "Mechanical-ventilation patients (n)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#procedure_occurrence",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#observation",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#device_exposure"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "mechanical_ventilation",
+    "variable": "Ventilator device records (n)",
+    "kind": "count",
+    "definition": "Count of rows among ventilator-device candidates in DEVICE_EXPOSURE.",
+    "denominator": "",
+    "action": "Review candidate specificity and source semantics; assess true duplicates and event linkage before defining episodes, without automatically removing repeated records.",
+    "zero_action": "Check candidate selection, source coverage and ETL mapping; a zero does not establish clinical absence.",
+    "notes": "Candidates use fixed seed IDs and/or concept-name regex; no descendant expansion. Standard concept field only; source-only evidence may be missed. Counts are records, not ventilation episodes.",
+    "section": "DEVICE_EXPOSURE",
+    "evidence": {
+      "sql_path": "sql/historical/mechanical_ventilation.sql",
+      "sql_sha256": "31efce0b936593b22bf7117da303c5e82c56cbe92b90ea3ef6e8176a186d88aa",
+      "sql_locator": {
+        "output_label_lines": [
+          638
+        ],
+        "query_id": "mechanical_ventilation",
+        "section": "DEVICE_EXPOSURE",
+        "variable": "Ventilator device records (n)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#procedure_occurrence",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#observation",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#device_exposure"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "mechanical_ventilation",
+    "variable": "Ventilator device patients (n)",
+    "kind": "count",
+    "definition": "Count of distinct person_id values among ventilator-device candidates in DEVICE_EXPOSURE.",
+    "denominator": "",
+    "action": "Review candidate specificity and source semantics; assess true duplicates and event linkage before defining episodes, without automatically removing repeated records.",
+    "zero_action": "Check candidate selection, source coverage and ETL mapping; a zero does not establish clinical absence.",
+    "notes": "Candidates use fixed seed IDs and/or concept-name regex; no descendant expansion. Standard concept field only; source-only evidence may be missed. This metric counts distinct persons, not records or ventilation episodes.",
+    "section": "DEVICE_EXPOSURE",
+    "evidence": {
+      "sql_path": "sql/historical/mechanical_ventilation.sql",
+      "sql_sha256": "31efce0b936593b22bf7117da303c5e82c56cbe92b90ea3ef6e8176a186d88aa",
+      "sql_locator": {
+        "output_label_lines": [
+          648
+        ],
+        "query_id": "mechanical_ventilation",
+        "section": "DEVICE_EXPOSURE",
+        "variable": "Ventilator device patients (n)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#procedure_occurrence",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#observation",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#device_exposure"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "mechanical_ventilation",
+    "variable": "Procedure datetime populated (%)",
+    "kind": "percent",
+    "definition": "100 × mechanical-ventilation PROCEDURE_OCCURRENCE candidate rows with procedure_datetime IS NOT NULL / all such candidate rows.",
+    "denominator": "All mechanical-ventilation PROCEDURE_OCCURRENCE candidate rows.",
+    "action": "Inspect missing fields; validate event timing or referenced-visit existence/patient/time consistency separately.",
+    "zero_action": "Inspect missing fields; validate event timing or referenced-visit existence/patient/time consistency separately. The percentage is rounded; inspect exact numerator/denominator before concluding none met the condition.",
+    "notes": "Candidates use fixed seed IDs and/or concept-name regex; no descendant expansion. Standard concept field only; source-only evidence may be missed. Counts are records, not ventilation episodes.",
+    "section": "Mechanical ventilation",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/mechanical_ventilation.sql",
+      "sql_sha256": "31efce0b936593b22bf7117da303c5e82c56cbe92b90ea3ef6e8176a186d88aa",
+      "sql_locator": {
+        "output_label_lines": [
+          446
+        ],
+        "query_id": "mechanical_ventilation",
+        "section": "Mechanical ventilation",
+        "variable": "Procedure datetime populated (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#procedure_occurrence",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#observation",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#device_exposure"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "mechanical_ventilation",
+    "variable": "Procedure visit_occurrence_id populated (%)",
+    "kind": "percent",
+    "definition": "100 × mechanical-ventilation PROCEDURE_OCCURRENCE candidate rows with visit_occurrence_id IS NOT NULL / all such candidate rows.",
+    "denominator": "All mechanical-ventilation PROCEDURE_OCCURRENCE candidate rows.",
+    "action": "Inspect missing fields; validate event timing or referenced-visit existence/patient/time consistency separately.",
+    "zero_action": "Inspect missing fields; validate event timing or referenced-visit existence/patient/time consistency separately. The percentage is rounded; inspect exact numerator/denominator before concluding none met the condition.",
+    "notes": "Candidates use fixed seed IDs and/or concept-name regex; no descendant expansion. Standard concept field only; source-only evidence may be missed. Counts are records, not ventilation episodes.",
+    "section": "Mechanical ventilation",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/mechanical_ventilation.sql",
+      "sql_sha256": "31efce0b936593b22bf7117da303c5e82c56cbe92b90ea3ef6e8176a186d88aa",
+      "sql_locator": {
+        "output_label_lines": [
+          466
+        ],
+        "query_id": "mechanical_ventilation",
+        "section": "Mechanical ventilation",
+        "variable": "Procedure visit_occurrence_id populated (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#procedure_occurrence",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#observation",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#device_exposure",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#visit_occurrence",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#visit_detail"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "mechanical_ventilation",
+    "variable": "Procedure visit_detail_id populated (%)",
+    "kind": "percent",
+    "definition": "100 × mechanical-ventilation PROCEDURE_OCCURRENCE candidate rows with visit_detail_id IS NOT NULL / all such candidate rows.",
+    "denominator": "All mechanical-ventilation PROCEDURE_OCCURRENCE candidate rows.",
+    "action": "Inspect missing fields; validate event timing or referenced-visit existence/patient/time consistency separately.",
+    "zero_action": "Inspect missing fields; validate event timing or referenced-visit existence/patient/time consistency separately. The percentage is rounded; inspect exact numerator/denominator before concluding none met the condition.",
+    "notes": "Candidates use fixed seed IDs and/or concept-name regex; no descendant expansion. Standard concept field only; source-only evidence may be missed. Counts are records, not ventilation episodes.",
+    "section": "Mechanical ventilation",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/mechanical_ventilation.sql",
+      "sql_sha256": "31efce0b936593b22bf7117da303c5e82c56cbe92b90ea3ef6e8176a186d88aa",
+      "sql_locator": {
+        "output_label_lines": [
+          486
+        ],
+        "query_id": "mechanical_ventilation",
+        "section": "Mechanical ventilation",
+        "variable": "Procedure visit_detail_id populated (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#procedure_occurrence",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#observation",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#device_exposure",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#visit_occurrence",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#visit_detail"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "mechanical_ventilation",
+    "variable": "Intubation datetime populated (%)",
+    "kind": "percent",
+    "definition": "100 × tracheal-intubation PROCEDURE_OCCURRENCE candidate rows with procedure_datetime IS NOT NULL / all such candidate rows.",
+    "denominator": "All tracheal-intubation PROCEDURE_OCCURRENCE candidate rows.",
+    "action": "Inspect missing fields; validate event timing or referenced-visit existence/patient/time consistency separately.",
+    "zero_action": "Inspect missing fields; validate event timing or referenced-visit existence/patient/time consistency separately. The percentage is rounded; inspect exact numerator/denominator before concluding none met the condition.",
+    "notes": "Candidates use fixed seed IDs and/or concept-name regex; no descendant expansion. Standard concept field only; source-only evidence may be missed. Counts are records, not ventilation episodes.",
+    "section": "Airway",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/mechanical_ventilation.sql",
+      "sql_sha256": "31efce0b936593b22bf7117da303c5e82c56cbe92b90ea3ef6e8176a186d88aa",
+      "sql_locator": {
+        "output_label_lines": [
+          528
+        ],
+        "query_id": "mechanical_ventilation",
+        "section": "Airway",
+        "variable": "Intubation datetime populated (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#procedure_occurrence",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#observation",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#device_exposure"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "mechanical_ventilation",
+    "variable": "Observation datetime populated (%)",
+    "kind": "percent",
+    "definition": "100 × mechanical-ventilation OBSERVATION candidate rows with observation_datetime IS NOT NULL / all such candidate rows.",
+    "denominator": "All mechanical-ventilation OBSERVATION candidate rows.",
+    "action": "Inspect missing fields; validate event timing or referenced-visit existence/patient/time consistency separately.",
+    "zero_action": "Inspect missing fields; validate event timing or referenced-visit existence/patient/time consistency separately. The percentage is rounded; inspect exact numerator/denominator before concluding none met the condition.",
+    "notes": "Candidates use fixed seed IDs and/or concept-name regex; no descendant expansion. Standard concept field only; source-only evidence may be missed. Counts are records, not ventilation episodes.",
+    "section": "OBSERVATION",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/mechanical_ventilation.sql",
+      "sql_sha256": "31efce0b936593b22bf7117da303c5e82c56cbe92b90ea3ef6e8176a186d88aa",
+      "sql_locator": {
+        "output_label_lines": [
+          580
+        ],
+        "query_id": "mechanical_ventilation",
+        "section": "OBSERVATION",
+        "variable": "Observation datetime populated (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#procedure_occurrence",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#observation",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#device_exposure"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "mechanical_ventilation",
+    "variable": "Observation visit linkage",
+    "kind": "text",
+    "definition": "Two separate percentages of mechanical-ventilation OBSERVATION candidate rows with non-null visit_occurrence_id and non-null visit_detail_id.",
+    "denominator": "All mechanical-ventilation OBSERVATION candidate rows, separately for each percentage.",
+    "action": "Inspect each field separately and verify visit existence, patient consistency and event timing; neither percentage proves valid linkage.",
+    "zero_action": "Check candidate selection, source coverage and ETL mapping; a zero does not establish clinical absence.",
+    "notes": "Candidates use fixed seed IDs and/or concept-name regex; no descendant expansion. Standard concept field only; source-only evidence may be missed. Counts are records, not ventilation episodes. Composite text output, not a single numeric percentage; each component is N/A if its denominator is zero.",
+    "section": "OBSERVATION",
+    "evidence": {
+      "sql_path": "sql/historical/mechanical_ventilation.sql",
+      "sql_sha256": "31efce0b936593b22bf7117da303c5e82c56cbe92b90ea3ef6e8176a186d88aa",
+      "sql_locator": {
+        "output_label_lines": [
+          600
+        ],
+        "query_id": "mechanical_ventilation",
+        "section": "OBSERVATION",
+        "variable": "Observation visit linkage"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#procedure_occurrence",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#observation",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#device_exposure",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#visit_occurrence",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#visit_detail"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "mechanical_ventilation",
+    "variable": "Ventilator device visit linkage",
+    "kind": "text",
+    "definition": "Two separate percentages of ventilator-device DEVICE_EXPOSURE candidate rows with non-null visit_occurrence_id and non-null visit_detail_id.",
+    "denominator": "All ventilator-device DEVICE_EXPOSURE candidate rows, separately for each percentage.",
+    "action": "Inspect each field separately and verify visit existence, patient consistency and event timing; neither percentage proves valid linkage.",
+    "zero_action": "Check candidate selection, source coverage and ETL mapping; a zero does not establish clinical absence.",
+    "notes": "Candidates use fixed seed IDs and/or concept-name regex; no descendant expansion. Standard concept field only; source-only evidence may be missed. Counts are records, not ventilation episodes. Composite text output, not a single numeric percentage; each component is N/A if its denominator is zero.",
+    "section": "DEVICE_EXPOSURE",
+    "evidence": {
+      "sql_path": "sql/historical/mechanical_ventilation.sql",
+      "sql_sha256": "31efce0b936593b22bf7117da303c5e82c56cbe92b90ea3ef6e8176a186d88aa",
+      "sql_locator": {
+        "output_label_lines": [
+          698
+        ],
+        "query_id": "mechanical_ventilation",
+        "section": "DEVICE_EXPOSURE",
+        "variable": "Ventilator device visit linkage"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#procedure_occurrence",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#observation",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#device_exposure",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#visit_occurrence",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#visit_detail"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "mechanical_ventilation",
+    "variable": "Start and end datetime both populated (%)",
+    "kind": "percent",
+    "definition": "100 × ventilator-device candidate rows with both start and end datetime non-null / all ventilator-device candidates.",
+    "denominator": "All ventilator-device DEVICE_EXPOSURE candidate rows.",
+    "action": "Inspect missing endpoints and distinguish device documentation from active ventilation episodes.",
+    "zero_action": "Inspect missing endpoints and distinguish device documentation from active ventilation episodes. The percentage is rounded; inspect exact numerator/denominator before concluding none met the condition.",
+    "notes": "Candidates use fixed seed IDs and/or concept-name regex; no descendant expansion. Standard concept field only; source-only evidence may be missed. Counts are records, not ventilation episodes.",
+    "section": "DEVICE_EXPOSURE",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/mechanical_ventilation.sql",
+      "sql_sha256": "31efce0b936593b22bf7117da303c5e82c56cbe92b90ea3ef6e8176a186d88aa",
+      "sql_locator": {
+        "output_label_lines": [
+          658
+        ],
+        "query_id": "mechanical_ventilation",
+        "section": "DEVICE_EXPOSURE",
+        "variable": "Start and end datetime both populated (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#procedure_occurrence",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#observation",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#device_exposure"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "mechanical_ventilation",
+    "variable": "Chronologically valid intervals among complete (%)",
+    "kind": "percent",
+    "definition": "100 × complete ventilator-device candidate rows with end ≥ start / complete candidate rows.",
+    "denominator": "Ventilator-device DEVICE_EXPOSURE candidate rows with both start and end datetime non-null.",
+    "action": "Review end-before-start records; assess completeness and zero-duration events separately.",
+    "zero_action": "Review end-before-start records; assess completeness and zero-duration events separately. The percentage is rounded; inspect exact numerator/denominator before concluding none met the condition.",
+    "notes": "Candidates use fixed seed IDs and/or concept-name regex; no descendant expansion. Standard concept field only; source-only evidence may be missed. Counts are records, not ventilation episodes. Equal timestamps count as valid here; this is chronology, not confirmation of ventilation duration.",
+    "section": "DEVICE_EXPOSURE",
+    "precision_decimals": 1,
+    "evidence": {
+      "sql_path": "sql/historical/mechanical_ventilation.sql",
+      "sql_sha256": "31efce0b936593b22bf7117da303c5e82c56cbe92b90ea3ef6e8176a186d88aa",
+      "sql_locator": {
+        "output_label_lines": [
+          678
+        ],
+        "query_id": "mechanical_ventilation",
+        "section": "DEVICE_EXPOSURE",
+        "variable": "Chronologically valid intervals among complete (%)"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#procedure_occurrence",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#observation",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#device_exposure"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "mechanical_ventilation",
+    "variable": "Mechanical-ventilation procedure concepts",
+    "kind": "text",
+    "definition": "Top 10 concept names and row counts in mechanical-ventilation PROCEDURE_OCCURRENCE candidates, sorted by count then name.",
+    "denominator": "",
+    "action": "Review candidate relevance and record semantics; inspect a full inventory if the top 10 omit important local representations.",
+    "zero_action": "Check candidate selection, source coverage and ETL mapping; a zero does not establish clinical absence.",
+    "notes": "Candidates use fixed seed IDs and/or concept-name regex; no descendant expansion. Standard concept field only; source-only evidence may be missed. Counts are records, not ventilation episodes. Grouped by concept name, not concept ID; NONE means no candidate rows, not clinical absence.",
+    "section": "Observed concepts",
+    "evidence": {
+      "sql_path": "sql/historical/mechanical_ventilation.sql",
+      "sql_sha256": "31efce0b936593b22bf7117da303c5e82c56cbe92b90ea3ef6e8176a186d88aa",
+      "sql_locator": {
+        "output_label_lines": [
+          736
+        ],
+        "query_id": "mechanical_ventilation",
+        "section": "Observed concepts",
+        "variable": "Mechanical-ventilation procedure concepts"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#procedure_occurrence",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#observation",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#device_exposure"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "mechanical_ventilation",
+    "variable": "Tracheal-intubation procedure concepts",
+    "kind": "text",
+    "definition": "Top 10 concept names and row counts in tracheal-intubation PROCEDURE_OCCURRENCE candidates, sorted by count then name.",
+    "denominator": "",
+    "action": "Review candidate relevance and record semantics; inspect a full inventory if the top 10 omit important local representations.",
+    "zero_action": "Check candidate selection, source coverage and ETL mapping; a zero does not establish clinical absence.",
+    "notes": "Candidates use fixed seed IDs and/or concept-name regex; no descendant expansion. Standard concept field only; source-only evidence may be missed. Counts are records, not ventilation episodes. Grouped by concept name, not concept ID; NONE means no candidate rows, not clinical absence.",
+    "section": "Observed concepts",
+    "evidence": {
+      "sql_path": "sql/historical/mechanical_ventilation.sql",
+      "sql_sha256": "31efce0b936593b22bf7117da303c5e82c56cbe92b90ea3ef6e8176a186d88aa",
+      "sql_locator": {
+        "output_label_lines": [
+          746
+        ],
+        "query_id": "mechanical_ventilation",
+        "section": "Observed concepts",
+        "variable": "Tracheal-intubation procedure concepts"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#procedure_occurrence",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#observation",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#device_exposure"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "mechanical_ventilation",
+    "variable": "Mechanical-ventilation observation concepts",
+    "kind": "text",
+    "definition": "Top 10 concept names and row counts in mechanical-ventilation OBSERVATION candidates, sorted by count then name.",
+    "denominator": "",
+    "action": "Review candidate relevance and record semantics; inspect a full inventory if the top 10 omit important local representations.",
+    "zero_action": "Check candidate selection, source coverage and ETL mapping; a zero does not establish clinical absence.",
+    "notes": "Candidates use fixed seed IDs and/or concept-name regex; no descendant expansion. Standard concept field only; source-only evidence may be missed. Counts are records, not ventilation episodes. Grouped by concept name, not concept ID; NONE means no candidate rows, not clinical absence.",
+    "section": "Observed concepts",
+    "evidence": {
+      "sql_path": "sql/historical/mechanical_ventilation.sql",
+      "sql_sha256": "31efce0b936593b22bf7117da303c5e82c56cbe92b90ea3ef6e8176a186d88aa",
+      "sql_locator": {
+        "output_label_lines": [
+          756
+        ],
+        "query_id": "mechanical_ventilation",
+        "section": "Observed concepts",
+        "variable": "Mechanical-ventilation observation concepts"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#procedure_occurrence",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#observation",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#device_exposure"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  },
+  {
+    "query_id": "mechanical_ventilation",
+    "variable": "Ventilator device concepts",
+    "kind": "text",
+    "definition": "Top 10 concept names and row counts in ventilator-device DEVICE_EXPOSURE candidates, sorted by count then name.",
+    "denominator": "",
+    "action": "Review candidate relevance and record semantics; inspect a full inventory if the top 10 omit important local representations.",
+    "zero_action": "Check candidate selection, source coverage and ETL mapping; a zero does not establish clinical absence.",
+    "notes": "Candidates use fixed seed IDs and/or concept-name regex; no descendant expansion. Standard concept field only; source-only evidence may be missed. Counts are records, not ventilation episodes. Grouped by concept name, not concept ID; NONE means no candidate rows, not clinical absence.",
+    "section": "Observed concepts",
+    "evidence": {
+      "sql_path": "sql/historical/mechanical_ventilation.sql",
+      "sql_sha256": "31efce0b936593b22bf7117da303c5e82c56cbe92b90ea3ef6e8176a186d88aa",
+      "sql_locator": {
+        "output_label_lines": [
+          766
+        ],
+        "query_id": "mechanical_ventilation",
+        "section": "Observed concepts",
+        "variable": "Ventilator device concepts"
+      },
+      "public_sources": [
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#procedure_occurrence",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#observation",
+        "https://ohdsi.github.io/CommonDataModel/cdm54.html#device_exposure"
+      ],
+      "support_limit": "Official CDM documentation supports field semantics, not validation of this exact SQL candidate selection, threshold, episode reconstruction or automated recommendation. Definitions and denominators are derived from the cited SQL.",
+      "recommendation_basis": "Conservative analytical follow-up inferred from the measured SQL condition and documented CDM field semantics; not a clinical-fitness decision rule.",
+      "sql_hash_normalization": "LF line endings; all other UTF-8 bytes preserved"
+    }
+  }
+]

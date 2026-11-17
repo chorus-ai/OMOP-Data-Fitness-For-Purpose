@@ -1,0 +1,90 @@
+[
+  {
+    "id": "microbiology_ast",
+    "topic": "microbiology_ast",
+    "path": "sql/historical/microbiology_ast.sql",
+    "sha256": "fba267ffd250942336e4205bf7df3b60b2d97a7f992892e662f286c9064472a2",
+    "source_sha256": "38eb9b194663cbd8e6f98a825422e44520c587df992a88941d0343ebb490f37c",
+    "required_tables": [
+      "concept",
+      "domain",
+      "fact_relationship",
+      "measurement"
+    ],
+    "status": "source-preserving",
+    "adaptation": "Schema qualifier only; no cohort/metric changes. Historical generated SQL, not proof of execution at every site."
+  },
+  {
+    "id": "continuous_infusions",
+    "topic": "continuous_infusions",
+    "path": "sql/historical/continuous_infusions.sql",
+    "sha256": "3084cbf252bc7ec79fefe86b908861545865ee3af1605ad9972fd6333e731cd9",
+    "source_sha256": "0f0d96fb9fcf8a7eb8ef333626db957515e591f5d7f5b7395986718f96fee530",
+    "required_tables": [
+      "concept",
+      "concept_ancestor",
+      "drug_exposure"
+    ],
+    "status": "source-preserving",
+    "adaptation": "Schema qualifier only; no cohort/metric changes. Historical generated SQL, not proof of execution at every site."
+  },
+  {
+    "id": "mechanical_ventilation",
+    "topic": "mechanical_ventilation",
+    "path": "sql/historical/mechanical_ventilation.sql",
+    "sha256": "31efce0b936593b22bf7117da303c5e82c56cbe92b90ea3ef6e8176a186d88aa",
+    "source_sha256": "d855bcb3badd5c4eb64444977f700000c012a39c07829a682a82ca0052f8936f",
+    "required_tables": [
+      "concept",
+      "device_exposure",
+      "observation",
+      "procedure_occurrence"
+    ],
+    "status": "source-preserving",
+    "adaptation": "Schema qualifier only; no cohort/metric changes. Historical generated SQL, not proof of execution at every site."
+  },
+  {
+    "id": "code_status",
+    "topic": "code_status",
+    "path": "sql/historical/code_status.sql",
+    "sha256": "babeadcfe3ec77241ae3fb3f8255c3b8e614d52335973ab6de998eb818fa42fa",
+    "source_sha256": "14ee2fc588478f6a50a5a51dddc9850b9f858585a675fe611f0fc2d826ce6fda",
+    "required_tables": [
+      "concept",
+      "condition_occurrence",
+      "observation"
+    ],
+    "status": "source-preserving",
+    "adaptation": "Schema qualifier only; no cohort/metric changes. Historical generated SQL, not proof of execution at every site."
+  },
+  {
+    "id": "fluid_balance",
+    "topic": "fluid_balance",
+    "path": "sql/historical/fluid_balance.sql",
+    "sha256": "d9d9f70d497bc81e505e5c5ddb36257c6dd505a00f558bbed1057343d4396fb5",
+    "source_sha256": "84c91c516b47040d9103f95f9f6853942067f19d1df7244c6b11050044f6ae0a",
+    "required_tables": [
+      "concept",
+      "measurement",
+      "observation"
+    ],
+    "status": "source-preserving",
+    "adaptation": "Schema qualifier only; no cohort/metric changes. Historical generated SQL, not proof of execution at every site."
+  },
+  {
+    "id": "dialysis_rrt",
+    "topic": "dialysis_rrt",
+    "path": "sql/historical/dialysis_rrt.sql",
+    "sha256": "808155968766f8b5ef06893bfd7c7b4d525dd896a168337e413c07e2c1064b30",
+    "source_sha256": "f2a808f88b8e2df53f04765928ebfe53a8dcacba2c0927f5fd66f20682ec149f",
+    "required_tables": [
+      "concept",
+      "device_exposure",
+      "measurement",
+      "observation",
+      "procedure_occurrence"
+    ],
+    "status": "source-preserving",
+    "adaptation": "Schema qualifier only; no cohort/metric changes. Historical generated SQL, not proof of execution at every site."
+  }
+]

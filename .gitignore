@@ -1,0 +1,24 @@
+# Local environments and execution state
+.venv/
+.notebook_qa_env/
+__pycache__/
+*.pyc
+*_source.tmp.md
+build_historical_pack.py
+.ipynb_checkpoints/
+.env
+*.pgpass
+# Private inputs and results
+*.xlsx
+private*/
+private*.json
+results*/
+assessment*/
+site_runs/
+site_reports*/
+sql_for_review/
+*.pdf
+!example/feedback_report.pdf
+*.docx
+!templates/report_template.docx
+!example/feedback_report.docx
