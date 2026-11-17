@@ -26,11 +26,11 @@ Unknown query/section/variable combinations remain **unmapped**, including impor
 Reports, CSV and JSON use one interpretation engine. `info` means mapped descriptive evidence; `review` means unavailable, invalid or unmapped evidence, not clinical severity. Denominator descriptions are not inferred numeric counts. Each site gets a separate output directory; real site exports must stay outside the code package.
 
 ## Provenance and validation
-`screening_manifest.json` retains query order, executable checksums, table requirements and reconstructed-source hashes. Private discussion links remain outside this repository. Deleted hard-coded-schema originals and the legacy import notebook are not required.
+`screening_manifest.json` retains query order, executable checksums, table requirements and reconstructed-source hashes.
 
-The project owner reports that all SQL scripts were previously tested against real databases. No real database was accessed for this integration; the updated automated interpretations and assembled workflow are evaluated separately with offline and synthetic tests. Read `VALIDATION.md` for the current results. Previous SQL experience does not by itself validate the new interpretations or make this limited screen exhaustive.
+Read `VALIDATION.md` for the current results. Previous SQL experience does not by itself validate the new interpretations or make this limited screen exhaustive.
 
 ## Example report
-The current `example/` folder contains the current synthetic DOCX/PDF and matching CSV/JSON outputs. All sample values are fictional. Generated reports and the blank template use Times New Roman, clear heading levels, repeated table headers and separately labelled next actions and sources.
+The current `example/` folder contains the current synthetic DOCX/PDF and matching CSV/JSON outputs. All sample values are fictional.
 
 See [Interpretation evidence and limits](EVIDENCE.md) for per-metric provenance, rounding behavior and the limits of automated follow-up advice.
